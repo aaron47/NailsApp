@@ -8,14 +8,32 @@ class FlaschNailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flasch Nail'),
+        title: Container(
+          margin: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height * 0.06,
+          ),
+          child: Image.asset(
+            "assets/EssentialAppBar.png",
+            fit: BoxFit.cover,
+            height: 120,
+          ),
+        ),
+        flexibleSpace: Image.asset(
+          "assets/AppBarBackground.png",
+          fit: BoxFit.cover,
+        ),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Get.back();
-          },
-          child: const Text("Go back!"),
+      body: Container(
+        child: const Padding(
+          padding: EdgeInsets.all(30),
+          child: Text(
+            "Nails Polish",
+            style: TextStyle(
+              fontSize: 20,
+              fontFamily: "Gotham",
+              color: Color.fromRGBO(11, 43, 45, 1),
+            ),
+          ),
         ),
       ),
     );

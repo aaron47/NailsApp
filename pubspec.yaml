@@ -64,6 +64,8 @@ flutter:
     - assets/essential2.png
     - assets/splash2.png
     - assets/SplashScreenBackground.png
+    - assets/EssentialAppBar.png
+    - assets/AppBarBackground.png
     - assets/categories/BuilderGel.png
     - assets/categories/CatEyes.png
     - assets/categories/CuticuleOil.png
@@ -96,6 +98,10 @@ flutter:
         - asset: assets/fonts/Roboto-Italic.ttf
           style: italic
         - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+    - family: Gotham
+      fonts:
+        - asset: assets/fonts/GothamBold.ttf
           weight: 700
   #
   # For details regarding fonts from package dependencies,
