@@ -35,10 +35,10 @@ class FlaschNailScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Padding(
               padding: EdgeInsets.all(20),
               child: Text(

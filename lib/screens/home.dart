@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: MediaQuery.of(context).size.height * 0.3,
+        toolbarHeight: MediaQuery.of(context).size.height * 0.25,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

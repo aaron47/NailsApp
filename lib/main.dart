@@ -19,13 +19,22 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AnimatedSplashScreen(
-        splashIconSize: MediaQuery.of(context).size.height,
-        splash: const Splash(),
-        nextScreen: const HomeScreen(),
-        splashTransition: SplashTransition.fadeTransition,
-        duration: 1500,
-      ),
+      home: const Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSplashScreen(
+      splashIconSize: MediaQuery.of(context).size.height,
+      splash: const Splash(),
+      nextScreen: const HomeScreen(),
+      splashTransition: SplashTransition.fadeTransition,
+      duration: 1500,
     );
   }
 }

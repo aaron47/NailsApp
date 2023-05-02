@@ -62,9 +62,10 @@ class NailDetails extends StatelessWidget {
             ),
           ),
           Center(
-            heightFactor: 1.1,
+            heightFactor: 1,
             child: NailCard(nail: nail),
           ),
+          const SizedBox(height: 10),
           Container(
             width: 300,
             decoration: const BoxDecoration(
@@ -75,35 +76,35 @@ class NailDetails extends StatelessWidget {
                 ),
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(12.0),
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Ref:017",
-                    style: TextStyle(
+                    "Ref:${nail.id}",
+                    style: const TextStyle(
                       fontSize: 25,
                       fontFamily: "Gotham",
                       fontWeight: FontWeight.w700,
                       color: Color.fromRGBO(80, 79, 79, 1),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Soak oof gell polish",
                     style: TextStyle(
                       fontFamily: "Gotham",
                       fontWeight: FontWeight.w400,
-                      fontSize: 25,
+                      fontSize: 20,
                       color: Color.fromRGBO(97, 95, 95, 1),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "Time of polymerization in light of the UV lamp-2-3minutes LED-lamp-1 minute",
                     style: TextStyle(
                       fontFamily: "Gotham",
                       fontWeight: FontWeight.w400,
-                      fontSize: 20,
+                      fontSize: 15,
                       color: Color.fromRGBO(126, 126, 126, 1),
                     ),
                   ),
