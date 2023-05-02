@@ -60,18 +60,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/essential.png
-    - assets/essential2.png
-    - assets/splash2.png
-    - assets/SplashScreenBackground.png
-    - assets/EssentialAppBar.png
-    - assets/AppBarBackground.png
-    - assets/categories/BuilderGel.png
-    - assets/categories/CatEyes.png
-    - assets/categories/CuticuleOil.png
-    - assets/categories/FlaschNail.png
-    - assets/categories/NailsPolish.png
-    - assets/categories/RubberBaseGel.png
+    - assets/nails/
+    - assets/categories/
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -101,6 +92,8 @@ flutter:
           weight: 700
     - family: Gotham
       fonts:
+        - asset: assets/fonts/GothamBook.ttf
+          weight: 400
         - asset: assets/fonts/GothamBold.ttf
           weight: 700
   #

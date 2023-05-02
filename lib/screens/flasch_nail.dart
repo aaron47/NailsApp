@@ -1,3 +1,4 @@
+import 'package:essential_beauty/widgets/nails/nails_row.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -7,6 +8,17 @@ class FlaschNailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.large(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        onPressed: () {
+          Get.back();
+        },
+        child: Image.asset(
+          "assets/categories/RubberBaseGel.png",
+        ),
+      ),
       appBar: AppBar(
         title: Container(
           margin: EdgeInsets.only(
@@ -23,17 +35,24 @@ class FlaschNailScreen extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      body: Container(
-        child: const Padding(
-          padding: EdgeInsets.all(30),
-          child: Text(
-            "Nails Polish",
-            style: TextStyle(
-              fontSize: 20,
-              fontFamily: "Gotham",
-              color: Color.fromRGBO(11, 43, 45, 1),
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Text(
+                "Nails Polish",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: "Gotham",
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(11, 43, 45, 1),
+                ),
+              ),
             ),
-          ),
+            NailsRow(),
+          ],
         ),
       ),
     );
