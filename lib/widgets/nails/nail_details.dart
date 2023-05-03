@@ -1,3 +1,4 @@
+import 'package:essential_beauty/screens/how_to_apply.dart';
 import 'package:essential_beauty/widgets/nails/nail_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,6 +38,7 @@ class NailDetails extends StatelessWidget {
         flexibleSpace: Image.asset(
           "assets/AppBarBackground.png",
           fit: BoxFit.cover,
+          height: double.infinity,
         ),
       ),
       body: Column(
@@ -44,6 +46,7 @@ class NailDetails extends StatelessWidget {
           Align(
             alignment: Alignment.topLeft,
             child: Container(
+              margin: const EdgeInsets.only(top: 10),
               width: 75,
               height: 69,
               decoration: const BoxDecoration(
@@ -58,7 +61,11 @@ class NailDetails extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Image.asset("assets/PlayButton.png"),
+              child: GestureDetector(
+                  onTap: () {
+                    Get.to(() => const HowToApplyScreen());
+                  },
+                  child: Image.asset("assets/PlayButton.png")),
             ),
           ),
           Center(
