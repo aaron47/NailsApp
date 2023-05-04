@@ -26,6 +26,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
         VideoPlayerController.asset("assets/nails/nail_demo_video.mp4");
     await Future.wait([videoPlayerController.initialize()]);
     _createChewieController();
+    setState(() {});
   }
 
   void _createChewieController() {
