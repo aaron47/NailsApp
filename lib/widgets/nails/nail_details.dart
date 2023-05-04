@@ -1,4 +1,5 @@
 import 'package:essential_beauty/screens/how_to_apply.dart';
+import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
 import 'package:essential_beauty/widgets/nails/nail_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,23 +25,7 @@ class NailDetails extends StatelessWidget {
           "assets/categories/RubberBaseGel.png",
         ),
       ),
-      appBar: AppBar(
-        title: Container(
-          margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.06,
-          ),
-          child: Image.asset(
-            "assets/EssentialAppBar.png",
-            fit: BoxFit.cover,
-            height: 120,
-          ),
-        ),
-        flexibleSpace: Image.asset(
-          "assets/AppBarBackground.png",
-          fit: BoxFit.cover,
-          height: double.infinity,
-        ),
-      ),
+      appBar: const CustomAppBar(),
       body: Column(
         children: [
           Align(
@@ -124,3 +109,5 @@ class NailDetails extends StatelessWidget {
     );
   }
 }
+
+
