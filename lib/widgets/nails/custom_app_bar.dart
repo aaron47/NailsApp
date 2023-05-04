@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -15,26 +12,20 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       centerTitle: false,
       actions: [
         Container(
-            margin: EdgeInsets.only(
-              right: MediaQuery.of(context).size.height * 0.04,
-            ),
-            child: Image.asset("assets/PlayButton.png")),
+          margin: EdgeInsets.only(
+            right: MediaQuery.of(context).size.height * 0.04,
+          ),
+          child: Image.asset("assets/PlayButton.png"),
+        ),
       ],
       title: Container(
         margin: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * 0.08,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Image.asset(
-              "assets/EssentialAppBar.png",
-              fit: BoxFit.cover,
-              height: 120,
-            ),
-            Image.asset("assets/PlayButton.png")
-          ],
+        child: Image.asset(
+          "assets/EssentialAppBar.png",
+          fit: BoxFit.cover,
+          height: 120,
         ),
       ),
       flexibleSpace: Image.asset(
@@ -44,8 +35,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
     );
   }
-  
+
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
