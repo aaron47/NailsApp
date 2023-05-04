@@ -91,10 +91,10 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
                 ),
               ),
             ),
-            const Center(
+            Center(
               child: Text(
-                "Nails Polish",
-                style: TextStyle(
+                "Nails Polish".toUpperCase(),
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 25,
                   fontFamily: "Gotham",
@@ -102,6 +102,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
                 ),
               ),
             ),
+            const SizedBox(height: 25),
             AspectRatio(
               aspectRatio: 16 / 9,
               child: Expanded(

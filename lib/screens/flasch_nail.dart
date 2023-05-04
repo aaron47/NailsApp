@@ -1,3 +1,4 @@
+import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
 import 'package:essential_beauty/widgets/nails/nails_row.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,22 +20,7 @@ class FlaschNailScreen extends StatelessWidget {
           "assets/categories/RubberBaseGel.png",
         ),
       ),
-      appBar: AppBar(
-        title: Container(
-          margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height * 0.06,
-          ),
-          child: Image.asset(
-            "assets/EssentialAppBar.png",
-            fit: BoxFit.cover,
-            height: 120,
-          ),
-        ),
-        flexibleSpace: Image.asset(
-          "assets/AppBarBackground.png",
-          fit: BoxFit.cover,
-        ),
-      ),
+      appBar: const CustomAppBar(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
