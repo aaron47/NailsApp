@@ -1,10 +1,10 @@
 import 'package:essential_beauty/screens/builder_gel.dart';
 import 'package:essential_beauty/screens/cat_eyes.dart';
 import 'package:essential_beauty/screens/cuticule_oil.dart';
-import 'package:essential_beauty/screens/flasch_nail.dart';
-import 'package:essential_beauty/screens/nail_polish.dart';
 import 'package:essential_beauty/screens/rubber_base_gel.dart';
 import 'package:essential_beauty/widgets/categories/category.dart';
+import 'flasch_nail.dart';
+import 'nails_polish.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
                       imgPath: "assets/categories/NailsPolish.png",
                       categoryName: 'Nails Polish',
                       onChangeScreen: () {
-                        Get.to(const NailPolishScreen());
+                        Get.to(const NailsPolishScreen());
                       },
                     ),
                     Category(

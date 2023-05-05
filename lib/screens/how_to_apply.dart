@@ -12,32 +12,32 @@ class HowToApplyScreen extends StatefulWidget {
 }
 
 class _HowToApplyScreenState extends State<HowToApplyScreen> {
-  late VideoPlayerController videoPlayerController;
-  late ChewieController? _chewieController;
+  VideoPlayerController? _videoPlayerController;
+  ChewieController? _chewieController;
 
   @override
   void initState() {
     super.initState();
-    initializePlayer();
+    _initializePlayer();
   }
 
-  Future<void> initializePlayer() async {
-    videoPlayerController =
+  Future<void> _initializePlayer() async {
+    _videoPlayerController =
         VideoPlayerController.asset("assets/nails/nail_demo_video.mp4");
-    await Future.wait([videoPlayerController.initialize()]);
+    await _videoPlayerController!.initialize();
     _createChewieController();
     setState(() {});
   }
 
   void _createChewieController() {
     _chewieController =
-        ChewieController(videoPlayerController: videoPlayerController);
+        ChewieController(videoPlayerController: _videoPlayerController!);
   }
 
   @override
   void dispose() {
-    videoPlayerController.dispose();
-    _chewieController?.dispose();
+    _videoPlayerController!.dispose();
+    _chewieController!.dispose();
     super.dispose();
   }
 
