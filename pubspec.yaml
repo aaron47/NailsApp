@@ -67,6 +67,7 @@ flutter:
   assets:
     - assets/nails/
     - assets/categories/
+    - assets/flasch_nail/
     - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see

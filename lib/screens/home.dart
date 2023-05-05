@@ -46,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                       imgPath: "assets/categories/FlaschNail.png",
                       categoryName: 'Flasch Nail',
                       onChangeScreen: () {
-                        Get.to(const FlaschNailScreen());
+                        Get.to(FlaschNailScreen());
                       },
                     ),
                   ],
