@@ -9,7 +9,7 @@ class Splash extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        toolbarHeight: MediaQuery.of(context).size.height * 0.6,
+        toolbarHeight: MediaQuery.of(context).size.height * 0.7,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -17,7 +17,7 @@ class Splash extends StatelessWidget {
             Container(
               margin: const EdgeInsets.only(left: 40),
               child: Image.asset(
-                "assets/essential2.png",
+                "assets/SplashScreenTitleLarge.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -41,7 +41,7 @@ class Splash extends StatelessWidget {
               child: Text(
                 "MADE WITH LOVE BY SLOTH-LAB",
                 style: TextStyle(
-                  fontSize: 7,
+                  fontSize: 20,
                   fontFamily: "Roboto",
                   fontWeight: FontWeight.w500,
                   color: Color.fromRGBO(249, 249, 249, 1),

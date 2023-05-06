@@ -67,9 +67,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/nails/
     - assets/categories/
     - assets/flasch_nail/
+    - assets/gel_builder/
+    - assets/gel_builder/small/
+    - assets/nails/
+    - assets/nails/large/
     - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see

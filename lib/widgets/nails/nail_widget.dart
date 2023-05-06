@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'Nail.dart';
@@ -17,13 +18,18 @@ class NailWidget extends StatelessWidget {
           onTap: () {
             Get.to(NailDetails(nail: nail));
           },
-          child: Image.asset(nail.imgPath),
+          child: Image.asset(
+            nail.imgPath,
+            width: 92.12.w,
+            height: 203.79.h,
+          ),
         ),
         const SizedBox(height: 10),
         Text(
           nail.id,
           style: const TextStyle(
             fontSize: 20,
+            fontWeight: FontWeight.w700,
             fontFamily: "Gotham",
             color: Color.fromRGBO(106, 104, 104, 1),
           ),

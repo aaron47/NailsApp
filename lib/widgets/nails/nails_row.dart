@@ -16,7 +16,7 @@ class _NailsRowState extends State<NailsRow> {
   void generateNails() {
     for (int i = 1; i < 113; i++) {
       String id = i.toString().padLeft(3, '0');
-      String imgPath = "assets/nails/$id.png";
+      String imgPath = "assets/nails/large/$id.png";
       Nail nail = Nail(
         imgPath: imgPath,
         id: id,
@@ -36,20 +36,29 @@ class _NailsRowState extends State<NailsRow> {
   @override
   Widget build(BuildContext context) {
     List<List<Nail>> rowsOfNails = List.generate(
-      (nails.length / 5).ceil(),
-      (index) => nails.sublist(index * 5, (index + 1) * 5 > nails.length ? nails.length : (index + 1) * 5),
+      (nails.length / 10).ceil(),
+      (index) => nails.sublist(index * 10,
+          (index + 1) * 10 > nails.length ? nails.length : (index + 1) * 10),
     );
 
-    return Column(
-      children: [
-        for (var row in rowsOfNails)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              for (var nail in row) NailWidget(nail: nail),
-            ],
-          ),
-      ],
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 200),
+      child: Column(
+        children: [
+          for (var row in rowsOfNails)
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 30),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  for (var nail in row) NailWidget(nail: nail),
+                ],
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

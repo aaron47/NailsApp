@@ -1,5 +1,6 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:video_player/video_player.dart';
 
 import '../widgets/nails/custom_app_bar.dart';
@@ -52,14 +53,14 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
+        child: Row(
           children: [
             Align(
               alignment: Alignment.topLeft,
               child: Container(
                 margin: const EdgeInsets.only(top: 20, bottom: 20),
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: 69,
+                width: 536.w,
+                height: 147.h,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(0),
@@ -77,16 +78,16 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
+                      Text(
                         "How to apply",
                         style: TextStyle(
                           fontFamily: "Gotham",
                           fontWeight: FontWeight.w700,
-                          fontSize: 20,
+                          fontSize: 35.sp,
                           color: Colors.white,
                         ),
                       ),
-                      Image.asset("assets/PlayButton.png"),
+                      Image.asset("assets/PlayButtonLarge.png"),
                     ],
                   ),
                 ),

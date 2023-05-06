@@ -10,10 +10,11 @@ import 'screens/splash.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
-  runApp(DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => const MyApp(), // Wrap your app
-  ));
+  // runApp(DevicePreview(
+  //   enabled: !kReleaseMode,
+  //   builder: (context) => const MyApp(), // Wrap your app
+  // ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +27,6 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
-        // ScreenUtil.init(context);
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Essential Beauty',
@@ -49,7 +49,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //  ScreenUtil.init(context);
+    ScreenUtil.init(context, designSize: const Size(1920, 1080));
     return AnimatedSplashScreen(
       splashIconSize: MediaQuery.of(context).size.height,
       splash: const Splash(),
