@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                         imgPath: "assets/categories/BuilderGel.png",
                         categoryName: 'Builder Gel',
                         onChangeScreen: () {
-                          Get.to(const BuilderGelScreen());
+                          Get.to( BuilderGelScreen());
                         }),
                     Category(
                       imgPath: "assets/categories/CuticuleOil.png",
