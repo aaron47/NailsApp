@@ -42,6 +42,7 @@ dependencies:
   chewie: ^1.4.0
   video_player: ^2.6.1
   flutter_screenutil: ^5.7.0
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_test:
