@@ -62,11 +62,12 @@ class FlaschNailScreen extends StatelessWidget {
                 width: MediaQuery.of(context).size.width -
                     MediaQuery.of(context).size.width / 3.5,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     for (var nail in flaschNailImages)
                       Image.asset(
                         nail.path,
-                        width: MediaQuery.of(context).size.width / 10,
+                        // width: MediaQuery.of(context).size.width / 10,
                       ),
                   ],
                 ),
@@ -86,28 +87,36 @@ class FlaschNailScreen extends StatelessWidget {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width -
                         MediaQuery.of(context).size.width / 3.5,
-                    child: Row(
-                      children: [
-                        for (var nail in flaschNailImages)
-                          Column(
-                            children: [
-                              const SizedBox(height: 10),
-                              Text(
-                                nail.id,
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  color: Color.fromRGBO(137, 137, 137, 1),
-                                  fontFamily: "Gotham",
-                                  fontWeight: FontWeight.w700,
+                    child: SingleChildScrollView(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          for (var nail in flaschNailImages)
+                            Column(
+                              children: [
+                                const SizedBox(height: 10),
+                                Text(
+                                  nail.id,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    color: Color.fromRGBO(137, 137, 137, 1),
+                                    fontFamily: "Gotham",
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
-                              ),
-                              Image.asset(
-                                nail.path,
-                                width: MediaQuery.of(context).size.width / 10,
-                              ),
-                            ],
-                          ),
-                      ],
+                                Stack(
+                                  children: [
+                                    Image.asset(
+                                      nail.path,
+                                    ),
+                                    Image.asset(
+                                        "assets/flasch_nail/Calque.png"),
+                                  ],
+                                ),
+                              ],
+                            ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
