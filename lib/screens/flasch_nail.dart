@@ -1,19 +1,21 @@
-import 'package:essential_beauty/widgets/flasch_nail_widgets/FlaschNail.dart';
+import 'package:essential_beauty/screens/flasch_nail_details.dart';
 import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../widgets/flasch_nail_widgets/FlaschNail.dart';
 
 class FlaschNailScreen extends StatelessWidget {
   FlaschNailScreen({super.key});
 
   final List<FlaschNail> flaschNailImages = [
-    FlaschNail(path: "assets/flasch_nail/113.png", id: "01"),
-    FlaschNail(path: "assets/flasch_nail/114.png", id: "02"),
-    FlaschNail(path: "assets/flasch_nail/115.png", id: "03"),
-    FlaschNail(path: "assets/flasch_nail/116.png", id: "04"),
-    FlaschNail(path: "assets/flasch_nail/117.png", id: "05"),
-    FlaschNail(path: "assets/flasch_nail/118.png", id: "06"),
-    FlaschNail(path: "assets/flasch_nail/119.png", id: "07"),
+    FlaschNail(path: "assets/flasch_nail/113.png", id: "01", imgId: "113"),
+    FlaschNail(path: "assets/flasch_nail/114.png", id: "02", imgId: "114"),
+    FlaschNail(path: "assets/flasch_nail/115.png", id: "03", imgId: "115"),
+    FlaschNail(path: "assets/flasch_nail/116.png", id: "04", imgId: "116"),
+    FlaschNail(path: "assets/flasch_nail/117.png", id: "05", imgId: "117"),
+    FlaschNail(path: "assets/flasch_nail/118.png", id: "06", imgId: "118"),
+    FlaschNail(path: "assets/flasch_nail/119.png", id: "07", imgId: "119"),
   ];
 
   @override
@@ -42,14 +44,14 @@ class FlaschNailScreen extends StatelessWidget {
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.1,
-              child: Center(
+              child: const Center(
                 child: Text(
-                  "Flasch Nail".toUpperCase(),
-                  style: const TextStyle(
+                  "FLASCH NAIL",
+                  style: TextStyle(
                     fontFamily: "Gotham",
                     fontWeight: FontWeight.w700,
                     color: Color.fromRGBO(35, 40, 55, 1),
-                    fontSize: 20,
+                    fontSize: 32,
                   ),
                 ),
               ),
@@ -65,9 +67,14 @@ class FlaschNailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     for (var nail in flaschNailImages)
-                      Image.asset(
-                        nail.path,
-                        // width: MediaQuery.of(context).size.width / 10,
+                      GestureDetector(
+                        onTap: () {
+                          Get.to(FlaschNailDetails(flaschNail: nail));
+                        },
+                        child: Image.asset(
+                          nail.path,
+                          // width: MediaQuery.of(context).size.width / 10,
+                        ),
                       ),
                   ],
                 ),
