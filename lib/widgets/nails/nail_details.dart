@@ -56,7 +56,9 @@ class NailDetails extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const PlayButtonLarge(),
+                        const PlayButtonLarge(
+                          bottomMargin: 40,
+                        ),
                         SizedBox(
                           width: 300,
                           child: Padding(
@@ -115,12 +117,15 @@ class NailDetails extends StatelessWidget {
 class PlayButtonLarge extends StatelessWidget {
   const PlayButtonLarge({
     super.key,
+    required this.bottomMargin,
   });
+
+  final double bottomMargin;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 80, bottom: 40),
+      margin: EdgeInsets.only(top: 80, bottom: bottomMargin),
       width: 158.w,
       height: 147.h,
       decoration: const BoxDecoration(

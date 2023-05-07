@@ -39,15 +39,6 @@ class FlaschNailDetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                "FLASCH NAIL",
-                style: TextStyle(
-                  fontSize: 32.sp,
-                  fontFamily: "Gotham",
-                  fontWeight: FontWeight.w700,
-                  color: const Color.fromRGBO(35, 40, 55, 1),
-                ),
-              ),
               Center(
                 heightFactor: 1,
                 child: Row(
@@ -60,7 +51,18 @@ class FlaschNailDetails extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const PlayButtonLarge(),
+                        Text(
+                          "FLASCH NAIL",
+                          style: TextStyle(
+                            fontSize: 32.sp,
+                            fontFamily: "Gotham",
+                            fontWeight: FontWeight.w700,
+                            color: const Color.fromRGBO(35, 40, 55, 1),
+                          ),
+                        ),
+                        const PlayButtonLarge(
+                          bottomMargin: 0,
+                        ),
                         SizedBox(
                           width: 300,
                           child: Padding(
@@ -78,7 +80,7 @@ class FlaschNailDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  "Soak oof gell polish",
+                                  "Flasching Disco Gel",
                                   style: TextStyle(
                                     fontFamily: "Gotham",
                                     fontWeight: FontWeight.w400,
@@ -103,7 +105,7 @@ class FlaschNailDetails extends StatelessWidget {
                       ],
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width * 0.2),
-                    Image.asset("assets/nails/ManicureBottle.png", width: 275.w)
+                    Image.asset("assets/flasch_nail/DISCO.png", width: 275.w)
                   ],
                 ),
               ),
