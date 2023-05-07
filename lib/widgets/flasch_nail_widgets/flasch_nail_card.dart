@@ -25,12 +25,19 @@ class _FlaschNailCardState extends State<FlaschNailCard> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => calqueController.isCalqueActivated.value
-          ? _LightFlaschNailCard(
-              widget: widget, calqueController: calqueController)
-          : _DarkFlachNailCard(
-              flaschNail: widget.flaschNail,
-            ),
+      () => AnimatedCrossFade(
+        duration: const Duration(milliseconds: 300),
+        firstChild: _LightFlaschNailCard(
+          widget: widget,
+          calqueController: calqueController,
+        ),
+        secondChild: _DarkFlachNailCard(
+          flaschNail: widget.flaschNail,
+        ),
+        crossFadeState: calqueController.isCalqueActivated.value
+            ? CrossFadeState.showFirst
+            : CrossFadeState.showSecond,
+      ),
     );
   }
 }
