@@ -11,26 +11,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       centerTitle: false,
-      actions: [
-        Container(
-          margin: EdgeInsets.only(
-            right: MediaQuery.of(context).size.height * 0.02,
-          ),
-          child: Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: MediaQuery.of(context).size.height * 0.03,
-          ),
-        ),
-      ],
       title: Container(
         margin: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * 0.03,
         ),
         child: Image.asset(
           "assets/EssentialAppBar.png",
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
+          // height: MediaQuery.of(context).size.height * 0.1,
           height: 100,
+          // width: 95.275,
         ),
       ),
       flexibleSpace: Image.asset(
@@ -42,5 +32,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(85);
 }

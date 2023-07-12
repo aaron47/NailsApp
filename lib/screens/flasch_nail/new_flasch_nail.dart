@@ -145,7 +145,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                                             Image.asset(
                                               nail.path,
                                               width: 160.w,
-                                              height: 625.h,
+                                              height: 550.h,
                                               // width: MediaQuery.of(context).size.width / 10,
                                             ),
                                             Container(
@@ -162,7 +162,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                                                       35, 40, 55, 1),
                                                 ),
                                               ),
-                                            )
+                                            ),
                                           ],
                                         )
                                       : Stack(
@@ -170,13 +170,13 @@ class NewFlaschNailScreen extends StatelessWidget {
                                             Image.asset(
                                               nail.path,
                                               width: 160.w,
-                                              height: 625.h,
+                                              height: 550.h,
                                               // width: MediaQuery.of(context).size.width / 10,
                                             ),
                                             Image.asset(
                                               "assets/flasch_nail/Calque.png",
                                               width: 160.w,
-                                              height: 625.h,
+                                              height: 550.h,
                                               // width: MediaQuery.of(context).size.width / 10,
                                             ),
                                           ],
@@ -185,6 +185,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+                        const SizedBox(height: 120),
                       ],
                     ),
                   ),

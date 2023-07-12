@@ -204,15 +204,15 @@ class _NailCardState extends State<NailCard> {
                       showMatte
                           ? Image.asset(
                               "assets/nails/matte/RectangleMatteVert.png",
-                              width: isTablet ? 110 : 75,
-                              height: isTablet ? 60 : 45,
-                              fit: BoxFit.contain,
+                              width: isTablet ? 200 : 100,
+                              height: isTablet ? 100 : 80,
+                              fit: BoxFit.fill,
                             )
                           : Image.asset(
                               "assets/nails/matte/RectangleMatteBlanc.png",
-                              width: isTablet ? 110 : 75,
-                              height: isTablet ? 60 : 45,
-                              fit: BoxFit.contain,
+                              width: isTablet ? 200 : 100,
+                              height: isTablet ? 100 : 80,
+                              fit: BoxFit.fill,
                             ),
                       Positioned.fill(
                         child: Align(
@@ -222,7 +222,7 @@ class _NailCardState extends State<NailCard> {
                               color: showMatte
                                   ? Colors.white
                                   : const Color.fromRGBO(47, 90, 92, 1),
-                              fontSize: isTablet ? 20 : 16,
+                              fontSize: isTablet ? 30.sp : 24.sp,
                               fontWeight: FontWeight.w700,
                             ),
                           ),
