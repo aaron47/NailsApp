@@ -188,19 +188,6 @@ class _NailCardState extends State<NailCard> {
                   },
                   child: Stack(
                     children: [
-                      // !showMatte
-                      //     ? Image.asset(
-                      //         "assets/nails/matte/RectangleMatteVert.png",
-                      //         width: 75,
-                      //         height: 45,
-                      //         fit: BoxFit.contain,
-                      //       )
-                      //     : Image.asset(
-                      //         "assets/nails/matte/RectangleMatteBlanc.png",
-                      //         width: 75,
-                      //         height: 45,
-                      //         fit: BoxFit.contain,
-                      //       ),
                       showMatte
                           ? Image.asset(
                               "assets/nails/matte/RectangleMatteVert.png",

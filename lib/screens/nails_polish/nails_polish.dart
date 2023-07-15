@@ -124,7 +124,8 @@ class NailsPolishTablet extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const NailsRow()
+                        const NailsRow(),
+                        const SizedBox(height: 100),
                       ],
                     ),
                   ),
@@ -232,6 +233,9 @@ class NailsPolishMobile extends StatelessWidget {
                   // ),
                 ),
                 const NailsRow(),
+                const SizedBox(
+                  height: 100,
+                )
               ],
             ),
           ),
