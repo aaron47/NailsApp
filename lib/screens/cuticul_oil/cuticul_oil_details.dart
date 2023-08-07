@@ -19,7 +19,7 @@ class CuticulOilDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // body: BaseCuticulOilWidget(oil: oil),
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SizedBox(

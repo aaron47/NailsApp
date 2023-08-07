@@ -42,7 +42,7 @@ class RubberBaseGelDetailsTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -92,7 +92,7 @@ class RubberBaseGelDetailsPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -400,7 +400,7 @@ class _RubberBaseGelCard extends StatelessWidget {
                 ? Hero(
                     tag: "RubberBaseGel${nail.id}",
                     child: Image.asset(
-                      "assets/rubber_base_gel/${nail.id}.png",
+                      "assets/nails/rubber_base_gel/${nail.id}.png",
                       fit: BoxFit.contain,
                       height: 478.h,
                       width: 216.w,
@@ -408,7 +408,7 @@ class _RubberBaseGelCard extends StatelessWidget {
                     ),
                   )
                 : Image.asset(
-                    "assets/rubber_base_gel/${nail.id}.png",
+                    "assets/nails/rubber_base_gel/${nail.id}.png",
                     fit: BoxFit.contain,
                     height: 700.h,
                     width: 500.w,

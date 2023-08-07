@@ -29,7 +29,7 @@ class RubberBaseGelTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           Row(
@@ -134,7 +134,7 @@ class RubberBaseGelPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -157,6 +157,7 @@ class RubberBaseGelPhone extends StatelessWidget {
                   ),
                 ),
                 _RubberBaseGelRow(),
+                const SizedBox(height: 50),
               ],
             ),
           ),
@@ -184,9 +185,7 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
   void generateNails() {
     for (int i = 1; i < 21; i++) {
       String id = i.toString().padLeft(2, '0');
-      String imgPath = isTablet
-          ? "assets/rubber_base_gel/$id.png"
-          : "assets/rubber_base_gel/small/$id.png";
+      String imgPath = "assets/nails/rubber_base_gel/$id.png";
       Nail nail = Nail(
         imgPath: imgPath,
         id: id,
@@ -289,18 +288,28 @@ class _RubberBaseGelNailWidget extends StatelessWidget {
                   tag: "RubberBaseGel${nail.id}",
                   child: Image.asset(
                     nail.imgPath!,
-                    width: 92.12.w,
-                    height: 203.79.h,
+                    // "assets/nails/rubber_base_gel/${nail.id}.png",
+                    fit: BoxFit.contain,
+                    height: TabletDetector.isTablet(
+                      MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+                    )
+                        ? 203.79.h.toDouble()
+                        : 107.0,
+                    width: TabletDetector.isTablet(
+                      MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+                    )
+                        ? 92.12.w.toDouble()
+                        : 46.0,
                   ),
                 )
               : Image.asset(
                   nail.imgPath!,
                   fit: BoxFit.contain,
-                  height: 478.h,
-                  width: 216.w,
+                  height: 350.h,
+                  width: 350.w,
                 ),
         ),
-        const SizedBox(height: 10),
+        // const SizedBox(height: 10),
         Text(
           nail.id,
           style: const TextStyle(

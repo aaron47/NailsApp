@@ -26,7 +26,7 @@ class BottleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           CarouselSlider(

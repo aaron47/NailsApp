@@ -30,7 +30,7 @@ class CatEyesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: isTablet
           ? CatEyesTablet(catEyeNails: catEyeNails)
           : CatEyesPhone(catEyeNails: catEyeNails),

@@ -39,7 +39,7 @@ class NailsDetailsTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SizedBox(
@@ -119,7 +119,7 @@ class NailsDetailsPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           CarouselSlider(
@@ -263,7 +263,7 @@ class BaseNail extends StatelessWidget {
                                   bottom: 0,
                                   right: 50,
                                   child: Image.asset(
-                                    nail.imgPath!,
+                                    nail.imgPath ?? "assets/nails/large/${nail.id}.png",
                                     width: 150.w,
                                   )),
                               Image.asset("assets/bottle/NailsPolish.png",

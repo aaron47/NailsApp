@@ -31,7 +31,7 @@ class NailsPolishTablet extends StatelessWidget {
   Widget build(BuildContext context) {
     final matteController = Get.put(MatteController());
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           Row(
@@ -156,7 +156,7 @@ class NailsPolishMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     final matteController = Get.put(MatteController());
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           SingleChildScrollView(

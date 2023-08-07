@@ -22,7 +22,7 @@ class FlaschNailDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       // body: BaseFlaschNail(flaschNail: flaschNail),
       body: Stack(
         children: [

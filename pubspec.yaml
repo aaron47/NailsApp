@@ -73,16 +73,17 @@ flutter:
     - assets/categories/
     - assets/flasch_nail/
     - assets/gel_builder/
-    - assets/gel_builder/small/
-    - assets/gel_builder/shape/
+    - assets/gel_builder_shape/
     - assets/cuticul_oil/
     - assets/cat_eyes/
     - assets/nails/
     - assets/nails/large/
     - assets/nails/matte/
-    - assets/rubber_base_gel/
-    - assets/rubber_base_gel/small/
-    - assets//bottle/
+    - assets/gel_builder_icons/
+#    - assets/rubber_base_gel/
+#    - assets/rubber_base_gel/small/
+    - assets/nails/rubber_base_gel/
+    - assets/bottle/
     - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see

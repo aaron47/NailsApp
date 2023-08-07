@@ -26,40 +26,50 @@ class NailWidget extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            nail.imgPath!.contains("matte")
-                ? matteController.setMatteTrue()
-                : matteController.setMatteFalse();
+            // nail.imgPath!.contains("matte")
+            //     ? matteController.setMatteTrue()
+            //     : matteController.setMatteFalse();
+            matteController.setMatteFalse();
             Get.to(NailDetails(nail: nail, nails: nails),
                 duration: const Duration(milliseconds: 800));
           },
           child: Obx(() {
-            // var imagePath = ;
-            final width = TabletDetector.isTablet(
-              MediaQueryData.fromWindow(WidgetsBinding.instance.window),
-            )
-                ? 92.12.w.toDouble()
-                : 46.0;
-            final height = TabletDetector.isTablet(
-              MediaQueryData.fromWindow(WidgetsBinding.instance.window),
-            )
-                ? 203.79.h.toDouble()
-                : 107.0;
-//return matteController.isMatte.value == true ?Text(nail.imgPath!) : Text(nail.imgPathMatte!);
             return matteController.isMatte.value == true
                 ? Hero(
                     tag: "NailsPolishMatt${nail.id}",
                     child: Image.asset(
-                      nail.imgPath!,
-                      width: width,
-                      height: height,
+                      nail.imgPath ?? "assets/nails/matte/${nail.id}.png",
+                      width: TabletDetector.isTablet(
+                        MediaQueryData.fromWindow(
+                            WidgetsBinding.instance.window),
+                      )
+                          ? 92.12.w.toDouble()
+                          : 46.0,
+                      height: TabletDetector.isTablet(
+                        MediaQueryData.fromWindow(
+                            WidgetsBinding.instance.window),
+                      )
+                          ? 203.79.h.toDouble()
+                          : 107.0,
+                      fit: BoxFit.contain,
                     ),
                   )
                 : Hero(
                     tag: "NailsPolish${nail.id}",
                     child: Image.asset(
-                      nail.imgPath!,
-                      width: width,
-                      height: height,
+                      nail.imgPath ?? "assets/nails/large/${nail.id}.png",
+                      width: TabletDetector.isTablet(
+                        MediaQueryData.fromWindow(
+                            WidgetsBinding.instance.window),
+                      )
+                          ? 92.12.w.toDouble()
+                          : 46.0,
+                      height: TabletDetector.isTablet(
+                        MediaQueryData.fromWindow(
+                            WidgetsBinding.instance.window),
+                      )
+                          ? 203.79.h.toDouble()
+                          : 107.0,
                     ),
                   );
           }),

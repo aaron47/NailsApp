@@ -16,6 +16,7 @@ class CalqueMatteController extends GetxController {
 
 class NailCard extends StatefulWidget {
   const NailCard({super.key, required this.nail});
+
   final Nail nail;
 
   @override
@@ -51,6 +52,7 @@ class _NailCardState extends State<NailCard> {
     "103",
     "104"
   ];
+
   void toggleShowMatte() {
     setState(() {
       showMatte = !showMatte;
@@ -61,9 +63,18 @@ class _NailCardState extends State<NailCard> {
   Widget build(BuildContext context) {
     final matteControler = Get.put(MatteController());
 
-    return Obx(() => GestureDetector(
-          onTap: toggleShowMatte,
-          child: Stack(
+    final width = TabletDetector.isTablet(
+      MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+    )
+        ? 92.12.w.toDouble()
+        : 46.0;
+    final height = TabletDetector.isTablet(
+      MediaQueryData.fromWindow(WidgetsBinding.instance.window),
+    )
+        ? 203.79.h.toDouble()
+        : 107.0;
+    return nonMatteNails.contains(widget.nail.id)
+        ? Stack(
             children: [
               isTablet
                   ? Image.asset(
@@ -78,149 +89,206 @@ class _NailCardState extends State<NailCard> {
                       // height: 304.79.h,
                       fit: BoxFit.contain,
                     ),
-              matteControler.isMatte.value == false
-                  ? Positioned.fill(
-                      child: Align(
-                        child: AnimatedCrossFade(
-                          firstChild: Hero(
-                            tag: "NailsPolishMatt${widget.nail.id}",
-                            child: widget.nail.imgPath != null &&
-                                    !nonMatteNails.contains(widget.nail.id)
-                                ? Image.asset(
-                                    // widget.nail.imgPath!,
-                                    "assets/nails/matte/${widget.nail.id}.png",
-                                    fit: BoxFit.contain,
-                                    height: isTablet ? 478.h : 231,
-                                    width: isTablet ? 216.w : 104,
-                                    // height: 200,
-                                  )
-                                : SizedBox(
-                                    height: isTablet ? 478.h : 231,
-                                    width: isTablet ? 216.w : 104,
-                                  ),
+              Positioned.fill(
+                child: Align(
+                  child: isTablet
+                      ? Hero(
+                          tag: "NailsPolish${widget.nail.id}",
+                          child: Image.asset(
+                            "assets/nails/large/${widget.nail.id}.png",
+                            fit: BoxFit.contain,
+                            height: 478.h,
+                            width: 216.w,
+                            // height: 200,
                           ),
-                          secondChild: widget.nail.imgPath != null
-                              ? isTablet
-                                  ? Hero(
-                                      tag: "NailsPolish${widget.nail.id}",
-                                      child: Image.asset(
-                                        "assets/nails/large/${widget.nail.id}.png",
-                                        fit: BoxFit.contain,
-                                        height: 478.h,
-                                        width: 216.w,
-                                        // height: 200,
-                                      ),
-                                    )
-                                  : Image.asset(
-                                      "assets/nails/large/${widget.nail.id}.png",
-                                      fit: BoxFit.contain,
-                                      height: 700.h,
-                                      width: 500.w,
-                                      // height: 200,
-                                    )
-                              : SizedBox(
-                                  height: 478.h,
-                                  width: 216.w,
-                                ),
-                          crossFadeState: showMatte
-                              ? CrossFadeState.showSecond
-                              : CrossFadeState.showFirst,
-                          duration: const Duration(milliseconds: 300),
+                        )
+                      : Image.asset(
+                          "assets/nails/large/${widget.nail.id}.png",
+                          fit: BoxFit.contain,
+                          height: 700.h,
+                          width: 500.w,
+                          // height: 200,
                         ),
-                      ),
-                    )
-                  : Positioned.fill(
-                      child: Align(
-                        child: AnimatedCrossFade(
-                          secondChild: Hero(
-                            tag: "NailsPolishMatt${widget.nail.id}",
-                            child: widget.nail.imgPath != null &&
-                                    !nonMatteNails.contains(widget.nail.id)
-                                ? Image.asset(
-                                    // widget.nail.imgPath!,
-                                    "assets/nails/matte/${widget.nail.id}.png",
-                                    fit: BoxFit.contain,
-                                    height: isTablet ? 478.h : 231,
-                                    width: isTablet ? 216.w : 104,
-                                    // height: 200,
-                                  )
-                                : SizedBox(
-                                    height: isTablet ? 478.h : 231,
-                                    width: isTablet ? 216.w : 104,
-                                  ),
-                          ),
-                          firstChild: widget.nail.imgPath != null
-                              ? isTablet
-                                  ? Hero(
-                                      tag: "NailsPolish${widget.nail.id}",
-                                      child: Image.asset(
-                                        "assets/nails/large/${widget.nail.id}.png",
-                                        fit: BoxFit.contain,
-                                        height: 478.h,
-                                        width: 216.w,
-                                        // height: 200,
-                                      ),
-                                    )
-                                  : Image.asset(
-                                      "assets/nails/large/${widget.nail.id}.png",
-                                      fit: BoxFit.contain,
-                                      height: 700.h,
-                                      width: 500.w,
-                                      // height: 200,
-                                    )
-                              : SizedBox(
-                                  height: 478.h,
-                                  width: 216.w,
-                                ),
-                          crossFadeState: showMatte
-                              ? CrossFadeState.showSecond
-                              : CrossFadeState.showFirst,
-                          duration: const Duration(milliseconds: 300),
-                        ),
-                      ),
-                    ),
-              Positioned(
-                bottom: 0,
-                left: isTablet ? 180 : 105,
-                child: InkWell(
-                  onTap: () {
-                    toggleShowMatte();
-                  },
-                  child: Stack(
+                ),
+              )
+            ],
+          )
+        : Obx(
+            () => GestureDetector(
+              onTap: toggleShowMatte,
+              child: Column(
+                children: [
+                  Stack(
                     children: [
-                      showMatte
+                      isTablet
                           ? Image.asset(
-                              "assets/nails/matte/RectangleMatteVert.png",
-                              width: isTablet ? 200 : 100,
-                              height: isTablet ? 100 : 80,
-                              fit: BoxFit.fill,
+                              "assets/nails/Card.png",
+                              width: 379.13.w,
+                              height: 630.79.h,
+                              fit: BoxFit.contain,
                             )
                           : Image.asset(
-                              "assets/nails/matte/RectangleMatteBlanc.png",
-                              width: isTablet ? 200 : 100,
-                              height: isTablet ? 100 : 80,
-                              fit: BoxFit.fill,
+                              "assets/nails/Card.png",
+                              // width: 183.13.w,
+                              // height: 304.79.h,
+                              fit: BoxFit.contain,
                             ),
-                      Positioned.fill(
-                        child: Align(
-                          child: Text(
-                            "MATTE",
-                            style: TextStyle(
-                              color: showMatte
-                                  ? Colors.white
-                                  : const Color.fromRGBO(47, 90, 92, 1),
-                              fontSize: isTablet ? 30.sp : 24.sp,
-                              fontWeight: FontWeight.w700,
+                      matteControler.isMatte.value == true
+                          ? Positioned.fill(
+                              child: Align(
+                                child: AnimatedCrossFade(
+                                  secondChild: Hero(
+                                    tag: "NailsPolishMatt${widget.nail.id}",
+                                    child: widget.nail.imgPath != null &&
+                                            !nonMatteNails
+                                                .contains(widget.nail.id)
+                                        ? Image.asset(
+                                            // widget.nail.imgPath!,
+                                            "assets/nails/matte/${widget.nail.id}.png",
+                                            fit: BoxFit.contain,
+                                            height: isTablet ? 478.h : 231,
+                                            width: isTablet ? 216.w : 104,
+                                            // height: 200,
+                                          )
+                                        : Image.asset(
+                                            // widget.nail.imgPath!,
+                                            "assets/nails/large/${widget.nail.id}.png",
+                                            fit: BoxFit.contain,
+                                            height: isTablet ? 478.h : 231,
+                                            width: isTablet ? 216.w : 104,
+                                            // height: 200,
+                                          ),
+                                  ),
+                                  firstChild: widget.nail.imgPath != null
+                                      ? isTablet
+                                          ? Hero(
+                                              tag:
+                                                  "NailsPolish${widget.nail.id}",
+                                              child: Image.asset(
+                                                "assets/nails/large/${widget.nail.id}.png",
+                                                fit: BoxFit.contain,
+                                                height: 478.h,
+                                                width: 216.w,
+                                                // height: 200,
+                                              ),
+                                            )
+                                          : Image.asset(
+                                              "assets/nails/large/${widget.nail.id}.png",
+                                              fit: BoxFit.contain,
+                                              height: 700.h,
+                                              width: 500.w,
+                                              // height: 200,
+                                            )
+                                      : Image.asset(
+                                          // widget.nail.imgPath!,
+                                          "assets/nails/large/${widget.nail.id}.png",
+                                          fit: BoxFit.contain,
+                                          height: isTablet ? 478.h : 231,
+                                          width: isTablet ? 216.w : 104,
+                                          // height: 200,
+                                        ),
+                                  crossFadeState: showMatte
+                                      ? CrossFadeState.showSecond
+                                      : CrossFadeState.showFirst,
+                                  duration: const Duration(milliseconds: 300),
+                                ),
+                              ),
+                            )
+                          : Positioned.fill(
+                              child: Align(
+                                child: AnimatedCrossFade(
+                                  firstChild: Hero(
+                                    tag: "NailsPolishMatt${widget.nail.id}",
+                                    child: widget.nail.imgPath != null &&
+                                            !nonMatteNails
+                                                .contains(widget.nail.id)
+                                        ? Image.asset(
+                                            // widget.nail.imgPath!,
+                                            "assets/nails/matte/${widget.nail.id}.png",
+                                            fit: BoxFit.contain,
+                                            height: isTablet ? 478.h : 231,
+                                            width: isTablet ? 216.w : 104,
+                                            // height: 200,
+                                          )
+                                        : SizedBox(
+                                            height: isTablet ? 478.h : 231,
+                                            width: isTablet ? 216.w : 104,
+                                          ),
+                                  ),
+                                  secondChild: widget.nail.imgPath != null
+                                      ? isTablet
+                                          ? Hero(
+                                              tag:
+                                                  "NailsPolish${widget.nail.id}",
+                                              child: Image.asset(
+                                                "assets/nails/large/${widget.nail.id}.png",
+                                                fit: BoxFit.contain,
+                                                height: 478.h,
+                                                width: 216.w,
+                                                // height: 200,
+                                              ),
+                                            )
+                                          : Image.asset(
+                                              "assets/nails/large/${widget.nail.id}.png",
+                                              fit: BoxFit.contain,
+                                              height: 700.h,
+                                              width: 500.w,
+                                              // height: 200,
+                                            )
+                                      : SizedBox(
+                                          height: 478.h,
+                                          width: 216.w,
+                                        ),
+                                  crossFadeState: showMatte
+                                      ? CrossFadeState.showSecond
+                                      : CrossFadeState.showFirst,
+                                  duration: const Duration(milliseconds: 300),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
-                ),
+                  const SizedBox(height: 12.5),
+                  if (!nonMatteNails.contains(widget.nail.id))
+                    InkWell(
+                      onTap: () {
+                        toggleShowMatte();
+                      },
+                      child: Stack(
+                        children: [
+                          !showMatte
+                              ? Image.asset(
+                                  "assets/nails/matte/RectangleMatteVert.png",
+                                  width: isTablet ? 200 : 100,
+                                  height: isTablet ? 100 : 80,
+                                  fit: BoxFit.fill,
+                                )
+                              : Image.asset(
+                                  "assets/nails/matte/RectangleMatteBlanc.png",
+                                  width: isTablet ? 200 : 100,
+                                  height: isTablet ? 100 : 80,
+                                  fit: BoxFit.fill,
+                                ),
+                          Positioned.fill(
+                            child: Align(
+                              child: Text(
+                                "MATTE",
+                                style: TextStyle(
+                                  color: showMatte
+                                      ? const Color.fromRGBO(47, 90, 92, 1)
+                                      : Colors.white,
+                                  fontSize: isTablet ? 30.sp : 70.sp,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
               ),
-            ],
-          ),
-        ));
+            ),
+          );
   }
 }

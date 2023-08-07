@@ -18,7 +18,7 @@ class BuilderGelDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       // body: BaseBuilderGelDetailWidget(gel: gel),
       body: Stack(
         children: [
@@ -75,7 +75,7 @@ class BaseBuilderGelDetailWidget extends StatelessWidget {
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     GestureDetector(
                       onTap: () {
@@ -89,14 +89,14 @@ class BaseBuilderGelDetailWidget extends StatelessWidget {
                               children: [
                                 SizedBox(
                                   width: 840.w,
-                                  height: 840.w,
+                                  height: 840.h,
                                 ),
                                 Image.asset(
                                   gel.shape,
                                   width: isTablet ? 840.w : MediaQuery.of(context).size.width,
                                 ),
                                 Positioned.fill(
-                                  top: 840.w - (77.w + 10.h + 30.h),
+                                  top: 840.w - (77.w + 55.h + 30.h),
                                   bottom: 0.0,
                                   child: Container(
                                     child: Column(

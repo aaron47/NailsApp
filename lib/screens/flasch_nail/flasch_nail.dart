@@ -23,7 +23,7 @@ class FlaschNailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(),
       body: Stack(
         children: [
           Center(
@@ -92,7 +92,7 @@ class FlaschNailScreen extends StatelessWidget {
                         height: MediaQuery.of(context).size.height,
                         child: SingleChildScrollView(
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               for (var nail in flaschNailImages)
                                 Column(

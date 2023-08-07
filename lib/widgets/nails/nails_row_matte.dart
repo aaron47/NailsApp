@@ -65,6 +65,7 @@ class _NailsRowMatteState extends State<NailsRowMatte> {
 
   late List<List<Nail>> rowsOfNails;
   late List<List<Nail>> rowsOfNailsPhone;
+
   @override
   void initState() {
     super.initState();
