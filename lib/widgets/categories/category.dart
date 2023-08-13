@@ -5,12 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/tablet_detector.dart';
 
 class Category extends StatelessWidget {
-  const Category(
-      {super.key,
-      required this.imgPath,
-      required this.categoryName,
-      required this.onChangeScreen,
-      required this.tag});
+  const Category({super.key, required this.imgPath, required this.categoryName, required this.onChangeScreen, required this.tag});
 
   final String imgPath;
   final String categoryName;
@@ -20,10 +15,7 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: TabletDetector.isTablet(
-              MediaQueryData.fromWindow(WidgetsBinding.instance.window))
-          ? 300.w
-          : 600.w,
+      width: TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window)) ? 300.w : 600.w,
       margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
       child: Column(
         children: [
@@ -31,11 +23,8 @@ class Category extends StatelessWidget {
             onTap: onChangeScreen,
             child: Hero(
               tag: tag,
-              flightShuttleBuilder: (BuildContext flightContext,
-                  Animation<double> animation,
-                  HeroFlightDirection flightDirection,
-                  BuildContext fromHeroContext,
-                  BuildContext toHeroContext) {
+              flightShuttleBuilder: (BuildContext flightContext, Animation<double> animation, HeroFlightDirection flightDirection,
+                  BuildContext fromHeroContext, BuildContext toHeroContext) {
                 return Image.asset(
                   imgPath,
                   width: 250.w,
@@ -51,10 +40,7 @@ class Category extends StatelessWidget {
           Text(
             categoryName,
             style: TextStyle(
-              fontSize: TabletDetector.isTablet(
-                      MediaQueryData.fromWindow(WidgetsBinding.instance.window))
-                  ? 32.sp
-                  : 50.sp,
+              fontSize: TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window)) ? 32.sp : 60.sp,
               fontFamily: "IBMPlexMono",
               fontWeight: FontWeight.bold,
             ),

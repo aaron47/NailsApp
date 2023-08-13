@@ -98,7 +98,7 @@ class NailsPolishTablet extends StatelessWidget {
                           ),
                           child: InkWell(
                             onTap: () {
-                              matteController.setMatteFalse();
+                              matteController.setMatteTrue();
                               Get.off(const NailsPolishMatteScreen());
                             },
                             child: Stack(
@@ -184,7 +184,7 @@ class NailsPolishMobile extends StatelessWidget {
 
                   child: InkWell(
                     onTap: () {
-                      matteController.setMatteFalse();
+                      matteController.setMatteTrue();
                       Get.off(const NailsPolishMatteScreen());
                     },
                     child: Stack(

@@ -218,6 +218,15 @@ class BaseBottlePhone extends StatelessWidget {
                 //     child: Image.asset("assets/CloseButton.png", width: 66.21.w, height: 66.h),
                 //   ),
                 // ),
+                const Text(
+                  "CUTICULE OIL",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontFamily: "Gotham",
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromRGBO(35, 40, 55, 1),
+                  ),
+                ),
                 Center(
                   heightFactor: 1,
                   child: Row(
@@ -254,15 +263,6 @@ class BaseBottlePhone extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "CUTICULE OIL",
-                            style: TextStyle(
-                              fontSize: 80.sp,
-                              fontFamily: "Gotham",
-                              fontWeight: FontWeight.w700,
-                              color: const Color.fromRGBO(35, 40, 55, 1),
-                            ),
-                          ),
                           SizedBox(
                             height: 150.h,
                           ),

@@ -23,7 +23,7 @@ class _NailsRowState extends State<NailsRow> {
 // 86.87.88.89.101.102
 // 103.104
 
-  final matteController = Get.put(MatteController());
+  // final matteController = Get.put(MatteController());
 
   void generateNails() {
     for (int i = 1; i < 113; i++) {
@@ -150,7 +150,7 @@ class NailRowPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final matteController = Get.put(MatteController());
+    // final matteController = Get.put(MatteController());
     return Column(
       children: [
         for (var row in rowsOfNails)
@@ -166,7 +166,6 @@ class NailRowPhone extends StatelessWidget {
                   NailWidget(
                     nail: nail,
                     nails: nails,
-                    isMatte: matteController.isMatte.value,
                   ),
                 ],
               ],

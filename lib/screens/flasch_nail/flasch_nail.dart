@@ -48,8 +48,7 @@ class FlaschNailScreen extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 10),
                     alignment: Alignment.bottomCenter,
-                    width: MediaQuery.of(context).size.width -
-                        MediaQuery.of(context).size.width / 4.5,
+                    width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 4.5,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -80,15 +79,13 @@ class FlaschNailScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image:
-                            AssetImage("assets/flasch_nail/FlaschNailBg.png"),
+                        image: AssetImage("assets/flasch_nail/FlaschNailBg.png"),
                         fit: BoxFit.cover,
                       ),
                     ),
                     child: Center(
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width -
-                            MediaQuery.of(context).size.width / 4.5,
+                        width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 4.5,
                         height: MediaQuery.of(context).size.height,
                         child: SingleChildScrollView(
                           child: Row(
@@ -97,6 +94,9 @@ class FlaschNailScreen extends StatelessWidget {
                               for (var nail in flaschNailImages)
                                 Column(
                                   children: [
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
                                     Text(
                                       nail.id,
                                       style: const TextStyle(

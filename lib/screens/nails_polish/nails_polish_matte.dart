@@ -15,10 +15,7 @@ class NailsPolishMatteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabletDetector.isTablet(
-            MediaQueryData.fromWindow(WidgetsBinding.instance.window))
-        ? const NailsPolishTablet()
-        : const NailsPolishMobile();
+    return TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window)) ? const NailsPolishTablet() : const NailsPolishMobile();
   }
 }
 
@@ -73,8 +70,7 @@ class NailsPolishTablet extends StatelessWidget {
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
-                    decoration: const BoxDecoration(
-                        color: Color.fromRGBO(240, 240, 240, 1)),
+                    decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
                     // padding: const EdgeInsets.all(50),
                     child: Column(
                       children: [
@@ -103,11 +99,7 @@ class NailsPolishTablet extends StatelessWidget {
                             },
                             child: Stack(
                               children: [
-                                Image.asset(
-                                    "assets/nails/matte/RectangleMatteVert.png",
-                                    width: 100,
-                                    height: 70,
-                                    fit: BoxFit.contain),
+                                Image.asset("assets/nails/matte/RectangleMatteVert.png", width: 100, height: 70, fit: BoxFit.contain),
                                 const Positioned.fill(
                                   child: Align(
                                     child: Text(
@@ -167,7 +159,7 @@ class NailsPolishMobile extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 20, top: 50),
                     child: const Text(
-                      "Nails Polish",
+                      "Nails Polish Matte",
                       style: TextStyle(
                         fontSize: 32,
                         fontFamily: "Gotham",
@@ -181,13 +173,12 @@ class NailsPolishMobile extends StatelessWidget {
                   margin: const EdgeInsets.only(left: 20),
                   child: InkWell(
                     onTap: () {
-                      matteController.setMatteTrue();
+                      matteController.setMatteFalse();
                       Get.off(const NailsPolishScreen());
                     },
                     child: Stack(
                       children: [
-                        Image.asset("assets/nails/matte/RectangleMatteVert.png",
-                            width: 75, height: 45, fit: BoxFit.contain),
+                        Image.asset("assets/nails/matte/RectangleMatteVert.png", width: 75, height: 45, fit: BoxFit.contain),
                         const Positioned.fill(
                             child: Align(
                           child: Text(

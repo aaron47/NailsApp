@@ -3,7 +3,6 @@ import 'package:essential_beauty/widgets/nails/nail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 import '../../shared/tablet_detector.dart';
 import 'Nail.dart';
@@ -47,17 +46,16 @@ class _NailsRowMatteState extends State<NailsRowMatte> {
 // 86.87.88.89.101.102
 // 103.104
 
-  final matteController = Get.put(MatteController());
+  // final matteController = Get.put(MatteController());
 
   void generateNails() {
     for (int i = 1; i < 113; i++) {
       String id = i.toString().padLeft(3, '0');
       String imgPath = "assets/nails/matte/$id.png";
       Nail nail = Nail(
-        imgPath: nonMatteNails.contains(i.toString()) ? null : imgPath,
+        imgPath: nonMatteNails.contains(id) ? 'assets/nails/non-matte.png' : imgPath,
         id: id,
-        description:
-            'Time of polymerization in light of the UV lamp-2-3minutes LED-lamp-1 minute',
+        description: 'Time of polymerization in light of the UV lamp-2-3minutes LED-lamp-1 minute',
       );
       nails.add(nail);
     }
@@ -73,28 +71,25 @@ class _NailsRowMatteState extends State<NailsRowMatte> {
 
     rowsOfNails = List.generate(
       (nails.length / 15).ceil(),
-      (index) => nails.sublist(index * 15,
-          (index + 1) * 15 > nails.length ? nails.length : (index + 1) * 15),
+      (index) => nails.sublist(index * 15, (index + 1) * 15 > nails.length ? nails.length : (index + 1) * 15),
     );
 
     rowsOfNailsPhone = List.generate(
       (nails.length / 5).ceil(),
-      (index) => nails.sublist(index * 5,
-          (index + 1) * 5 > nails.length ? nails.length : (index + 1) * 5),
+      (index) => nails.sublist(index * 5, (index + 1) * 5 > nails.length ? nails.length : (index + 1) * 5),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return TabletDetector.isTablet(
-            MediaQueryData.fromWindow(WidgetsBinding.instance.window))
-        ? NailRowTablet(rowsOfNails: rowsOfNails, nails: nails)
-        : NailRowPhone(rowsOfNails: rowsOfNailsPhone, nails: nails);
+    return TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window))
+        ? NailRowTabletMatte(rowsOfNails: rowsOfNails, nails: nails)
+        : NailRowPhoneMatte(rowsOfNails: rowsOfNailsPhone, nails: nails);
   }
 }
 
-class NailRowTablet extends StatelessWidget {
-  const NailRowTablet({
+class NailRowTabletMatte extends StatelessWidget {
+  const NailRowTabletMatte({
     super.key,
     required this.rowsOfNails,
     required this.nails,
@@ -125,8 +120,7 @@ class NailRowTablet extends StatelessWidget {
                             width: 92.12.w,
                             height: 203.79.h,
                             child: Container(
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 20),
+                              margin: const EdgeInsets.symmetric(horizontal: 20),
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: Colors.grey,
@@ -156,8 +150,8 @@ class NailRowTablet extends StatelessWidget {
   }
 }
 
-class NailRowPhone extends StatelessWidget {
-  const NailRowPhone({
+class NailRowPhoneMatte extends StatelessWidget {
+  const NailRowPhoneMatte({
     super.key,
     required this.rowsOfNails,
     required this.nails,
@@ -168,7 +162,6 @@ class NailRowPhone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final matteController = Get.put(MatteController());
     return Column(
       children: [
         for (var row in rowsOfNails)
@@ -211,7 +204,7 @@ class NailRowPhone extends StatelessWidget {
                     NailWidget(
                       nail: nail,
                       nails: nails,
-                      isMatte: matteController.isMatte.value,
+                      // isMatte: matteController.isMatte.value,
                     ),
                 ],
               ],

@@ -14,28 +14,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       centerTitle: false,
-      toolbarHeight: isTablet ? 120 : 65,
+      toolbarHeight: isTablet ? 120 : 45,
       title: Container(
         margin: EdgeInsets.only(
-          top: Platform.isWindows
-              ? MediaQuery.of(context).size.height * 0.04
-              : MediaQuery.of(context).size.height * 0.05,
+          top: Platform.isWindows ? MediaQuery.of(context).size.height * 0.04 : MediaQuery.of(context).size.height * 0.05,
         ),
         child: SizedBox(
           height: 150,
-          child: isTablet ? Image.asset(
-            "assets/EssentialAppBar.png",
-            fit: BoxFit.contain,
-            // height: MediaQuery.of(context).size.height * 0.1,
-            // width: 95.275,
-            height: MediaQuery.of(context).size.height * 0.1,
-          ) : Image.asset(
-            "assets/EssentialAppBar.png",
-            fit: BoxFit.contain,
-            // height: MediaQuery.of(context).size.height * 0.1,
-            width: 200,
-            height: 70,
-          ),
+          child: isTablet
+              ? Image.asset(
+                  "assets/EssentialAppBar.png",
+                  fit: BoxFit.contain,
+                  // height: MediaQuery.of(context).size.height * 0.1,
+                  // width: 95.275,
+                  height: MediaQuery.of(context).size.height * 0.1,
+                )
+              : Image.asset(
+                  "assets/EssentialAppBar.png",
+                  fit: BoxFit.contain,
+                  // height: MediaQuery.of(context).size.height * 0.1,
+                  width: 200,
+                  height: 70,
+                ),
         ),
       ),
       flexibleSpace: Image.asset(
@@ -47,5 +47,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(120);
+  Size get preferredSize => isTablet ? const Size.fromHeight(120) : const Size.fromHeight(50);
 }

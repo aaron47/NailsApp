@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_widget_cache.dart';
 import 'package:glass/glass.dart';
 
 import '../shared/tablet_detector.dart';
@@ -216,7 +215,7 @@ class CustomBottomBarMobile extends StatelessWidget {
                             categoryName,
                             style: const TextStyle(
                               fontFamily: "Gotham",
-                              fontSize: 15,
+                              fontSize: 12,
                               fontWeight: FontWeight.w700,
                               color: Color.fromRGBO(150, 150, 150, 1),
                             ),

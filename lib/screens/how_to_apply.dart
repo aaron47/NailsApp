@@ -64,8 +64,7 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
             Color.fromRGBO(20, 77, 81, 0.8),
             Color.fromRGBO(0, 0, 0, 0.8),
           ],
-        )
-        ),
+        )),
         child: Row(
           children: [
             if (isTablet) ...[
@@ -166,12 +165,17 @@ class RightSidePhone extends StatelessWidget {
                 color: Color.fromRGBO(248, 248, 248, 1),
               ),
             ),
-            SizedBox(
-              width: 305.85,
-              child: Align(
-                alignment: Alignment.topRight,
-                child:
-                    Container(margin: const EdgeInsets.only(bottom: 20), child: Image.asset("assets/CloseButton.png", width: 21.82, height: 21.75)),
+            InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: SizedBox(
+                width: 305.85,
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child:
+                      Container(margin: const EdgeInsets.only(bottom: 20), child: Image.asset("assets/CloseButton.png", width: 21.82, height: 21.75)),
+                ),
               ),
             ),
             SizedBox(
