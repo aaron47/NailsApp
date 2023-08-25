@@ -1,8 +1,6 @@
-import 'package:essential_beauty/shared/matte_controller.dart';
 import 'package:essential_beauty/widgets/nails/nail_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 import '../../shared/tablet_detector.dart';
 import 'Nail.dart';
@@ -201,7 +199,7 @@ class NailRowPhoneMatte extends StatelessWidget {
                       ],
                     )
                   else
-                    NailWidget(
+                    NailWidgetMatte(
                       nail: nail,
                       nails: nails,
                       // isMatte: matteController.isMatte.value,
