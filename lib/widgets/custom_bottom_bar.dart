@@ -1,7 +1,7 @@
+import 'package:essential_beauty/widgets/glass.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:glass/glass.dart';
 
 import '../shared/tablet_detector.dart';
 import 'custom_ripple_effect.dart';
