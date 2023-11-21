@@ -99,19 +99,7 @@ class CustomBottomBarTablet extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Container(
-                            margin: EdgeInsets.only(right: 250.w),
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              categoryName,
-                              style: TextStyle(
-                                fontFamily: "Gotham",
-                                fontSize: 28.sp,
-                                fontWeight: FontWeight.w700,
-                                color: const Color.fromRGBO(150, 150, 150, 1),
-                              ),
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ).asGlass(
@@ -135,11 +123,8 @@ class CustomBottomBarTablet extends StatelessWidget {
                         width: 10.0,
                       ),
                     ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10.0),
-                      child: Image.asset(
-                        imagePath,
-                      ),
+                    child: Image.asset(
+                      imagePath,
                     ),
                   ),
                   onTap: () {
@@ -208,19 +193,19 @@ class CustomBottomBarMobile extends StatelessWidget {
                             children: const [],
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.only(right: 20),
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            categoryName,
-                            style: const TextStyle(
-                              fontFamily: "Gotham",
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: Color.fromRGBO(150, 150, 150, 1),
-                            ),
-                          ),
-                        ),
+                        // Container(
+                        //   margin: const EdgeInsets.only(right: 20),
+                        //   alignment: Alignment.centerRight,
+                        //   child: Text(
+                        //     categoryName,
+                        //     style: const TextStyle(
+                        //       fontFamily: "Gotham",
+                        //       fontSize: 12,
+                        //       fontWeight: FontWeight.w700,
+                        //       color: Color.fromRGBO(150, 150, 150, 1),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     ),
                   ).asGlass(
@@ -238,8 +223,8 @@ class CustomBottomBarMobile extends StatelessWidget {
                   child: Center(
                     child: Image.asset(
                       imagePath,
-                      width: 70.5,
-                      height: 70.5,
+                      width: 200,
+                      // height: 70.5,
                     ),
                   ),
                   onTap: () {

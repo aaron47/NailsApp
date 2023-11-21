@@ -47,12 +47,7 @@ extension GlassWidget<T extends Widget> on T {
                     ],
                   )
                 : null,
-            image: frosted
-                ? DecorationImage(
-                    image: AssetImage('images/noise.png', package: 'glass'),
-                    fit: BoxFit.cover,
-                  )
-                : null,
+            image: null,
           ),
           child: this,
         ),

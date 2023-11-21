@@ -48,7 +48,7 @@ class BottleScreen extends StatelessWidget {
             }).toList(),
           ),
           const CustomBottomBar(
-            imagePath: "assets/categories/CuticuleOilLarge.png",
+            imagePath: "assets/categories/CuticuleOil.png",
             heroTag: "CuticuleOil",
             categoryName: "CUTICULE OIL",
           ),
@@ -218,15 +218,15 @@ class BaseBottlePhone extends StatelessWidget {
                 //     child: Image.asset("assets/CloseButton.png", width: 66.21.w, height: 66.h),
                 //   ),
                 // ),
-                const Text(
-                  "CUTICULE OIL",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontFamily: "Gotham",
-                    fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(35, 40, 55, 1),
-                  ),
-                ),
+                // const Text(
+                //   "CUTICULE OIL",
+                //   style: TextStyle(
+                //     fontSize: 15,
+                //     fontFamily: "Gotham",
+                //     fontWeight: FontWeight.w700,
+                //     color: Color.fromRGBO(35, 40, 55, 1),
+                //   ),
+                // ),
                 Center(
                   heightFactor: 1,
                   child: Row(
@@ -264,11 +264,11 @@ class BaseBottlePhone extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SizedBox(
-                            height: 150.h,
+                            height: 100.h,
                           ),
-                          const PlayButtonLargePhone(
-                            bottomMargin: 0,
-                          ),
+                          // const PlayButtonLargePhone(
+                          //   bottomMargin: 0,
+                          // ),
                           SizedBox(
                             width: 850.w,
                             child: Padding(

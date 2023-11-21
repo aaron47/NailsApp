@@ -19,8 +19,7 @@ class NailDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabletDetector.isTablet(
-            MediaQueryData.fromWindow(WidgetsBinding.instance.window))
+    return TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window))
         ? NailsDetailsTablet(nail: nail, nails: nails)
         : NailsDetailsPhone(nail: nail, nails: nails);
   }
@@ -58,32 +57,14 @@ class NailsDetailsTablet extends StatelessWidget {
                       child: Container(
                         width: 1511.w,
                         height: MediaQuery.of(context).size.height,
-                        decoration: const BoxDecoration(
-                            color: Color.fromRGBO(240, 240, 240, 1)),
+                        decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
                         padding: const EdgeInsets.all(15),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            InkWell(
-                              onTap: () {
-                                Get.back();
-                              },
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Image.asset("assets/CloseButton.png",
-                                    width: 66.21.w, height: 66.h),
-                              ),
-                            ),
-                            Text(
-                              "NAILS POLISH",
-                              style: TextStyle(
-                                fontSize: 32.sp,
-                                fontFamily: "Gotham",
-                                fontWeight: FontWeight.w700,
-                                color: const Color.fromRGBO(35, 40, 55, 1),
-                              ),
-                            ),
+
+                            
                             BaseNail(nail: n),
                             const SizedBox(height: 10),
                           ],
@@ -96,7 +77,7 @@ class NailsDetailsTablet extends StatelessWidget {
             ),
           ),
           const CustomBottomBar(
-            imagePath: "assets/categories/NailsPolishLarge.png",
+            imagePath: "assets/categories/NailsPolish.png",
             heroTag: "NailsPolish",
             categoryName: "NAILS POLISH",
           ),
@@ -137,7 +118,7 @@ class NailsDetailsPhone extends StatelessWidget {
             }).toList(),
           ),
           const CustomBottomBar(
-            imagePath: "assets/categories/NailsPolishLarge.png",
+            imagePath: "assets/categories/NailsPolish.png",
             heroTag: "NailsPolish",
             categoryName: "NAILS POLISH",
           ),
@@ -164,8 +145,7 @@ class BaseNail extends StatelessWidget {
         child: Center(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            decoration:
-                const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
+            decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
             padding: const EdgeInsets.all(50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -181,9 +161,7 @@ class BaseNail extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const PlayButtonLarge(
-                            bottomMargin: 40,
-                          ),
+                          SizedBox(height: 200.w,),
                           SizedBox(
                             width: 400.w,
                             child: Padding(
@@ -197,8 +175,7 @@ class BaseNail extends StatelessWidget {
                                       fontSize: 32.sp,
                                       fontFamily: "Gotham",
                                       fontWeight: FontWeight.w700,
-                                      color:
-                                          const Color.fromRGBO(80, 79, 79, 1),
+                                      color: const Color.fromRGBO(80, 79, 79, 1),
                                     ),
                                   ),
                                   Text(
@@ -207,8 +184,7 @@ class BaseNail extends StatelessWidget {
                                       fontFamily: "Gotham",
                                       fontWeight: FontWeight.w700,
                                       fontSize: 32.sp,
-                                      color:
-                                          const Color.fromRGBO(97, 95, 95, 1),
+                                      color: const Color.fromRGBO(97, 95, 95, 1),
                                     ),
                                   ),
                                   Text(
@@ -217,8 +193,7 @@ class BaseNail extends StatelessWidget {
                                       fontFamily: "Gotham",
                                       fontWeight: FontWeight.w400,
                                       fontSize: 32.sp,
-                                      color:
-                                          const Color.fromRGBO(97, 95, 95, 1),
+                                      color: const Color.fromRGBO(97, 95, 95, 1),
                                     ),
                                   ),
                                   SizedBox(height: 10.h),
@@ -243,8 +218,7 @@ class BaseNail extends StatelessWidget {
                                       fontFamily: "Gotham",
                                       fontWeight: FontWeight.w400,
                                       fontSize: 24.sp,
-                                      color: const Color.fromRGBO(
-                                          126, 126, 126, 1),
+                                      color: const Color.fromRGBO(126, 126, 126, 1),
                                     ),
                                   ),
                                 ],
@@ -266,8 +240,7 @@ class BaseNail extends StatelessWidget {
                                     nail.imgPath ?? "assets/nails/large/${nail.id}.png",
                                     width: 150.w,
                                   )),
-                              Image.asset("assets/bottle/NailsPolish.png",
-                                  width: 275.w),
+                              Image.asset("assets/bottle/NailsPolish.png", width: 275.w),
                             ],
                           ),
                         ],
@@ -294,31 +267,32 @@ class BaseNailPhone extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            margin: const EdgeInsets.only(top: 20),
-            width: 75,
-            height: 69,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(0),
-                topRight: Radius.circular(75),
-                bottomLeft: Radius.circular(0),
-                bottomRight: Radius.circular(75),
-              ),
-              image: DecorationImage(
-                image: AssetImage("assets/AppBarBackground.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: GestureDetector(
-                onTap: () {
-                  Get.to(() => const HowToApplyScreen());
-                },
-                child: Image.asset("assets/PlayButton.png")),
-          ),
-        ),
+        SizedBox(height: 40,) , 
+        // Align(
+        //   alignment: Alignment.topLeft,
+        //   child: Container(
+        //     margin: const EdgeInsets.only(top: 20),
+        //     width: 75,
+        //     height: 69,
+        //     decoration: const BoxDecoration(
+        //       borderRadius: BorderRadius.only(
+        //         topLeft: Radius.circular(0),
+        //         topRight: Radius.circular(75),
+        //         bottomLeft: Radius.circular(0),
+        //         bottomRight: Radius.circular(75),
+        //       ),
+        //       image: DecorationImage(
+        //         image: AssetImage("assets/backgroundAppBarV2.png"),
+        //         fit: BoxFit.cover,
+        //       ),
+        //     ),
+        //     child: GestureDetector(
+        //         onTap: () {
+        //           Get.to(() => const HowToApplyScreen());
+        //         },
+        //         child: Image.asset("assets/PlayButton.png")),
+        //   ),
+        // ),
         Center(
           heightFactor: 1,
           child: NailCard(nail: nail),
@@ -397,7 +371,7 @@ class PlayButtonLarge extends StatelessWidget {
           bottomRight: Radius.circular(75),
         ),
         image: DecorationImage(
-          image: AssetImage("assets/AppBarBackground.png"),
+          image: AssetImage("assets/backgroundAppBarV2.png"),
           fit: BoxFit.cover,
         ),
       ),
@@ -438,7 +412,7 @@ class PlayButtonLargePhone extends StatelessWidget {
           bottomRight: Radius.circular(75),
         ),
         image: DecorationImage(
-          image: AssetImage("assets/AppBarBackground.png"),
+          image: AssetImage("assets/backgroundAppBarV2.png"),
           fit: BoxFit.cover,
         ),
       ),

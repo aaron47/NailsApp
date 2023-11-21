@@ -14,8 +14,7 @@ class RubberBaseGelScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabletDetector.isTablet(
-            MediaQueryData.fromWindow(WidgetsBinding.instance.window))
+    return TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window))
         ? const RubberBaseGelTablet()
         : const RubberBaseGelPhone();
   }
@@ -29,38 +28,21 @@ class RubberBaseGelTablet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(playVideo: true,),
       body: Stack(
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.08,
-                  child: const ButtonPlayVideo()),
               Expanded(
                 child: SingleChildScrollView(
                   child: Container(
                     // width: 1400.w,
-                    decoration: const BoxDecoration(
-                        color: Color.fromRGBO(240, 240, 240, 1)),
+                    decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
                     padding: const EdgeInsets.all(100),
                     child: Column(
                       children: [
-                        Center(
-                          child: Container(
-                            margin: const EdgeInsets.only(bottom: 100, top: 50),
-                            child: const Text(
-                              "RUBBER BASE GEL",
-                              style: TextStyle(
-                                fontSize: 32,
-                                fontFamily: "Gotham",
-                                fontWeight: FontWeight.w700,
-                                color: Color.fromRGBO(35, 40, 55, 1),
-                              ),
-                            ),
-                          ),
-                        ),
+                        
                         _RubberBaseGelRow()
                       ],
                     ),
@@ -75,7 +57,7 @@ class RubberBaseGelTablet extends StatelessWidget {
           const CustomBottomBar(
             categoryName: 'RUBBER BASE GEL',
             heroTag: 'RubberBaseGel',
-            imagePath: "assets/categories/RubberBaseGelLarge.png",
+            imagePath: "assets/categories/RubberBaseGel.png",
           ),
         ],
       ),
@@ -106,7 +88,7 @@ class ButtonPlayVideo extends StatelessWidget {
               bottomRight: Radius.circular(75),
             ),
             image: DecorationImage(
-              image: AssetImage("assets/AppBarBackground.png"),
+              image: AssetImage("assets/backgroundAppBarV2.png"),
               fit: BoxFit.cover,
             ),
           ),
@@ -134,7 +116,7 @@ class RubberBaseGelPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(playVideo: true,),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -142,20 +124,7 @@ class RubberBaseGelPhone extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Center(
-                  child: Container(
-                    margin: const EdgeInsets.only(bottom: 50, top: 50),
-                    child: const Text(
-                      "RUBBER BASE GEL",
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontFamily: "Gotham",
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(35, 40, 55, 1),
-                      ),
-                    ),
-                  ),
-                ),
+                
                 _RubberBaseGelRow(),
                 const SizedBox(height: 50),
               ],
@@ -164,7 +133,7 @@ class RubberBaseGelPhone extends StatelessWidget {
           const CustomBottomBar(
             categoryName: 'RUBBER BASE GEL',
             heroTag: 'RubberBaseGel',
-            imagePath: "assets/categories/RubberBaseGelLarge.png",
+            imagePath: "assets/categories/RubberBaseGel.png",
           ),
         ],
       ),
@@ -179,8 +148,7 @@ class _RubberBaseGelRow extends StatefulWidget {
 
 class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
   List<Nail> nails = [];
-  final isTablet = TabletDetector.isTablet(
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
 
   void generateNails() {
     for (int i = 1; i < 21; i++) {
@@ -189,8 +157,7 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
       Nail nail = Nail(
         imgPath: imgPath,
         id: id,
-        description:
-            'Time of polymerization in light of the UV lamp-2-3minutes LED-lamp-1 minute',
+        description: 'Time of polymerization in light of the UV lamp-2-3minutes LED-lamp-1 minute',
       );
       nails.add(nail);
     }
@@ -205,13 +172,11 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
     generateNails();
     rowsOfNails = List.generate(
       (nails.length / 10).ceil(),
-      (index) => nails.sublist(index * 10,
-          (index + 1) * 10 > nails.length ? nails.length : (index + 1) * 10),
+      (index) => nails.sublist(index * 10, (index + 1) * 10 > nails.length ? nails.length : (index + 1) * 10),
     );
     rowsOfNailsPhone = List.generate(
       (nails.length / 5).ceil(),
-      (index) => nails.sublist(index * 5,
-          (index + 1) * 5 > nails.length ? nails.length : (index + 1) * 5),
+      (index) => nails.sublist(index * 5, (index + 1) * 5 > nails.length ? nails.length : (index + 1) * 5),
     );
   }
 
@@ -243,7 +208,7 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
               children: [
                 for (var row in rowsOfNailsPhone)
                   Container(
-                    margin: const EdgeInsets.symmetric(vertical: 30),
+                    margin: const EdgeInsets.symmetric(vertical: 1),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -256,6 +221,8 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
                       ],
                     ),
                   ),
+
+                  SizedBox(height: 30,)
               ],
             ),
     );
@@ -265,8 +232,7 @@ class _RubberBaseGelRowState extends State<_RubberBaseGelRow> {
 class _RubberBaseGelNailWidget extends StatelessWidget {
   final Nail nail;
   final List<Nail> nails;
-  final isTablet = TabletDetector.isTablet(
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
 
   _RubberBaseGelNailWidget({required this.nail, required this.nails});
 
@@ -293,8 +259,8 @@ class _RubberBaseGelNailWidget extends StatelessWidget {
                     height: TabletDetector.isTablet(
                       MediaQueryData.fromWindow(WidgetsBinding.instance.window),
                     )
-                        ? 203.79.h.toDouble()
-                        : 107.0,
+                        ? 253.79.h.toDouble()
+                        : 157.0,
                     width: TabletDetector.isTablet(
                       MediaQueryData.fromWindow(WidgetsBinding.instance.window),
                     )
@@ -305,8 +271,8 @@ class _RubberBaseGelNailWidget extends StatelessWidget {
               : Image.asset(
                   nail.imgPath!,
                   fit: BoxFit.contain,
-                  height: 350.h,
-                  width: 350.w,
+                  height: 300.h,
+                  width: 300.w,
                 ),
         ),
         // const SizedBox(height: 10),

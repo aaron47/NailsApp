@@ -1,6 +1,5 @@
 import 'package:essential_beauty/models/cuticul_oil.dart';
 import 'package:essential_beauty/screens/cuticul_oil/cuticul_oil_details.dart';
-import 'package:essential_beauty/screens/rubber_base_gel/rubber_base_gel.dart';
 import 'package:essential_beauty/widgets/custom_bottom_bar.dart';
 import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +15,8 @@ class CuticuleOilScreen extends StatelessWidget {
   final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
 
   final List<Bottle> bottles = const [
-    Bottle("01", imgPath: "assets/cuticul_oil/Apple.png", ref: "Monoï"),
-    Bottle("02", imgPath: "assets/cuticul_oil/Orange.png", ref: "Orange"),
+    Bottle("01", imgPath: "assets/cuticul_oil/peche.png", ref: "Peche"),
+    Bottle("02", imgPath: "assets/cuticul_oil/manoi.png", ref: "Manoi"),
   ];
 
   final List<CuticulOil> builderOilList = [
@@ -62,7 +61,7 @@ class CuticuleOilScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(playVideo: true,),
         body: isTablet
             ? CuticuleOilTablet(builderOilList: builderOilList, bottles: bottles)
             : CuticuleOilPhone(builderOilList: builderOilList, bottles: bottles));
@@ -85,7 +84,8 @@ class CuticuleOilTablet extends StatelessWidget {
       children: [
         Row(
           children: [
-            const ButtonPlayVideo(),
+            // const ButtonPlayVideo(),
+            SizedBox(height: 40,) ,
             Container(
               width: 1511.w,
               decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
@@ -93,20 +93,7 @@ class CuticuleOilTablet extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Text(
-                        "CUTICULE OIL",
-                        style: TextStyle(
-                          fontSize: 32.sp,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(11, 43, 45, 1),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   Expanded(
                     child: Container(
                       child: Row(
@@ -199,9 +186,9 @@ class CuticuleOilTablet extends StatelessWidget {
                                               );
                                             },
                                             child: Hero(
-                                              tag: 'Monoï',
+                                              tag: 'peche',
                                               child: Image.asset(
-                                                "assets/cuticul_oil/Apple.png",
+                                                            "assets/cuticul_oil/peche.png",
                                                 width: 153.w,
                                                 // height: 393.h,
                                               ),
@@ -210,7 +197,7 @@ class CuticuleOilTablet extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 5.h, bottom: 15.h),
                                             child: Text(
-                                              "Monoï",
+                                              "Peche",
                                               style: TextStyle(
                                                 fontSize: 20.sp,
                                                 fontFamily: "Gotham",
@@ -239,9 +226,9 @@ class CuticuleOilTablet extends StatelessWidget {
                                               );
                                             },
                                             child: Hero(
-                                              tag: 'Orange',
+                                              tag: 'manoi',
                                               child: Image.asset(
-                                                "assets/cuticul_oil/Orange.png",
+                                                "assets/cuticul_oil/manoi.png",
                                                 width: 153.w,
                                                 // height: 393.h,
                                               ),
@@ -250,7 +237,7 @@ class CuticuleOilTablet extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 5.h, bottom: 15.h),
                                             child: Text(
-                                              "Orange",
+                                              "Manoi",
                                               style: TextStyle(
                                                 fontSize: 20.sp,
                                                 fontFamily: "Gotham",
@@ -282,7 +269,7 @@ class CuticuleOilTablet extends StatelessWidget {
           ],
         ),
         const CustomBottomBar(
-          imagePath: "assets/categories/CuticuleOilLarge.png",
+          imagePath: "assets/categories/CuticuleOil.png",
           heroTag: "CuticuleOil",
           categoryName: "CUTICULE OIL",
         ),
@@ -316,20 +303,7 @@ class CuticuleOilPhone extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Text(
-                        "CUTICULE OIL",
-                        style: TextStyle(
-                          fontSize: 100.sp,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(11, 43, 45, 1),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   Expanded(
                     child: Container(
                       child: Column(
@@ -395,20 +369,20 @@ class CuticuleOilPhone extends StatelessWidget {
                             children: [
                               Center(
                                 child: Container(
-                                  height: 200.h,
-                                  width: 800.56.w,
+                                  height: 320.h,
+                                  width: 1000.56.w,
                                   // color: Colors.white,
                                   alignment: Alignment.bottomCenter,
                                   child: Image.asset(
                                     "assets/cuticul_oil/oil_background.png",
-                                    width: 733.w,
+                                    width: 833.w,
                                   ),
                                 ),
                               ),
                               Center(
                                 child: SizedBox(
                                   width: 700.w,
-                                  height: 220.h,
+                                  height: 340.h,
                                   // color: Colors.amber,
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -427,9 +401,9 @@ class CuticuleOilPhone extends StatelessWidget {
                                               );
                                             },
                                             child: Hero(
-                                              tag: 'Monoï',
+                                              tag: 'peche',
                                               child: Image.asset(
-                                                "assets/cuticul_oil/Apple.png",
+                                                "assets/cuticul_oil/peche.png",
                                                 width: 253.w,
                                                 // height: 393.h,
                                               ),
@@ -438,7 +412,7 @@ class CuticuleOilPhone extends StatelessWidget {
                                           Container(
                                             margin: EdgeInsets.only(top: 5.h, bottom: 15.h),
                                             child: Text(
-                                              "Monoï",
+                                              "Peche",
                                               style: TextStyle(
                                                 fontSize: 50.sp,
                                                 fontFamily: "Gotham",
@@ -467,18 +441,18 @@ class CuticuleOilPhone extends StatelessWidget {
                                               );
                                             },
                                             child: Hero(
-                                              tag: 'Orange',
+                                              tag: 'manoi',
                                               child: Image.asset(
-                                                "assets/cuticul_oil/Orange.png",
+                                                "assets/cuticul_oil/manoi.png",
                                                 width: 253.w,
                                                 // height: 393.h,
                                               ),
                                             ),
                                           ),
                                           Container(
-                                            margin: EdgeInsets.only(top: 5.h, bottom: 15.h),
+                                            margin: EdgeInsets.only(top: 5.h, bottom: 12.h),
                                             child: Text(
-                                              "Orange",
+                                              "Manoi",
                                               style: TextStyle(
                                                 fontSize: 50.sp,
                                                 fontFamily: "Gotham",
@@ -500,7 +474,7 @@ class CuticuleOilPhone extends StatelessWidget {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 10),
                         ],
                       ),
                     ),
@@ -511,7 +485,7 @@ class CuticuleOilPhone extends StatelessWidget {
           ],
         ),
         const CustomBottomBar(
-          imagePath: "assets/categories/CuticuleOilLarge.png",
+          imagePath: "assets/categories/CuticuleOil.png",
           heroTag: "CuticuleOil",
           categoryName: "CUTICULE OIL",
         ),

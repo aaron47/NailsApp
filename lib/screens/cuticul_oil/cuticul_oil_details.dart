@@ -46,7 +46,7 @@ class CuticulOilDetails extends StatelessWidget {
             ),
           ),
           const CustomBottomBar(
-            imagePath: "assets/categories/CuticuleOilLarge.png",
+            imagePath: "assets/categories/CuticuleOil.png",
             heroTag: "CuticuleOil",
             categoryName: "CUTICULE OIL",
           ),
@@ -70,6 +70,7 @@ class BaseCuticulOilWidget extends StatefulWidget {
 
 class _BaseCuticulOilWidgetState extends State<BaseCuticulOilWidget> {
   @override
+  // ignore: override_on_non_overriding_member
   bool _alignmentChanged = false;
 
   @override
@@ -257,15 +258,7 @@ class _BaseCuticulOilPhoneWidgetState extends State<BaseCuticulOilPhoneWidget> {
                 //     child: Image.asset("assets/CloseButton.png", width: 66.21.w, height: 66.h),
                 //   ),
                 // ),
-                const Text(
-                  "CUTICULE OIL",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: "Gotham",
-                    fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(35, 40, 55, 1),
-                  ),
-                ),
+              
                 Center(
                   heightFactor: 1,
                   child: Stack(
@@ -289,9 +282,9 @@ class _BaseCuticulOilPhoneWidgetState extends State<BaseCuticulOilPhoneWidget> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const PlayButtonLargePhone(
-                                    bottomMargin: 0,
-                                  ),
+                                  // const PlayButtonLargePhone(
+                                  //   bottomMargin: 0,
+                                  // ),
                                   SizedBox(
                                     width: 915.w,
                                     child: Padding(

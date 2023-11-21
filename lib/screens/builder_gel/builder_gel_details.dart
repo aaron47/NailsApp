@@ -3,7 +3,6 @@ import 'package:essential_beauty/screens/rubber_base_gel/rubber_base_gel.dart';
 import 'package:essential_beauty/shared/tablet_detector.dart';
 import 'package:essential_beauty/widgets/custom_bottom_bar.dart';
 import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
-import 'package:essential_beauty/widgets/nails/nail_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,7 +12,7 @@ class BuilderGelDetails extends StatelessWidget {
 
   final BuilderGel gel;
   final List<BuilderGel> gels;
-  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window));
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class BuilderGelDetails extends StatelessWidget {
           const CustomBottomBar(
             categoryName: 'BUILDER GEL',
             heroTag: 'BuilderGel',
-            imagePath: "assets/categories/BuilderGelLarge.png",
+            imagePath: "assets/categories/BuilderGel.png",
           ),
         ],
       ),
@@ -44,34 +43,36 @@ class BaseBuilderGelDetailWidget extends StatelessWidget {
   });
 
   final BuilderGel gel;
-  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window));
 
   @override
   Widget build(BuildContext context) {
     return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const ButtonPlayVideo(),
+        // const ButtonPlayVideo(),
         Container(
-          width: 1511.w,
-          decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
+          // width: 1511.w,
+          // decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Padding(
-                  padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.all(20),
-                  child: Text(
-                    "Builder gel",
-                    style: TextStyle(
-                      fontSize: isTablet ? 32 : 22,
-                      fontFamily: "Gotham",
-                      fontWeight: FontWeight.w700,
-                      color: const Color.fromRGBO(11, 43, 45, 1),
-                    ),
-                  ),
-                ),
-              ),
+              // Center(
+              //   child: Padding(
+              //     padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.all(20),
+              //     child: Text(
+              //       "Builder gel",
+              //       style: TextStyle(
+              //         fontSize: isTablet ? 32 : 22,
+              //         fontFamily: "Gotham",
+              //         fontWeight: FontWeight.w700,
+              //         color: const Color.fromRGBO(11, 43, 45, 1),
+              //       ),
+              //     ),
+              //   ),
+              // ),
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +198,7 @@ class BaseBuilderGelDetailWidgetPhone extends StatelessWidget {
   });
 
   final BuilderGel gel;
-  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window));
 
   @override
   Widget build(BuildContext context) {
@@ -213,27 +214,22 @@ class BaseBuilderGelDetailWidgetPhone extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Center(
-                child: Padding(
-                  padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.only(top: 20, right: 20),
-                  child: Row(
-                    children: [
-                      const PlayButtonLargePhone(
-                        bottomMargin: 0,
-                      ),
-                      Text(
-                        "Builder gel",
-                        style: TextStyle(
-                          fontSize: isTablet ? 32 : 22,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(11, 43, 45, 1),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              SizedBox(
+                height: 60,
               ),
+              // Center(
+              //   child: Padding(
+              //     padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.only(top: 20, right: 20),
+              //     child: Row(
+              //       children: [
+              //         const PlayButtonLargePhone(
+              //           bottomMargin: 0,
+              //         ),
+
+              //       ],
+              //     ),
+              //   ),
+              // ),
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

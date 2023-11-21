@@ -25,8 +25,7 @@ class FlaschNailCard extends StatefulWidget {
 
 class _FlaschNailCardState extends State<FlaschNailCard> {
   final CalqueController calqueController = Get.put(CalqueController());
-  final isTablet = TabletDetector.isTablet(
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window));
 
   late final Widget LIGHT_FLASCH_NAIL_CARD;
   late final Widget DARK_FLASCH_NAIL_CARD;
@@ -60,9 +59,7 @@ class _FlaschNailCardState extends State<FlaschNailCard> {
         duration: const Duration(milliseconds: 300),
         firstChild: LIGHT_FLASCH_NAIL_CARD,
         secondChild: DARK_FLASCH_NAIL_CARD,
-        crossFadeState: calqueController.isCalqueActivated.value
-            ? CrossFadeState.showFirst
-            : CrossFadeState.showSecond,
+        crossFadeState: calqueController.isCalqueActivated.value ? CrossFadeState.showFirst : CrossFadeState.showSecond,
       ),
     );
   }
@@ -108,11 +105,11 @@ class _LightFlaschNailCard extends StatelessWidget {
           ),
           Positioned(
             right: 40,
-            bottom: 5,
+            bottom: 35,
             child: GestureDetector(
               onTap: () => calqueController.toggleCalque(),
               child: Image.asset(
-                "assets/flasch_nail/DarkVectorLarge.png",
+                "assets/flasch_nail/DarkVector.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -168,7 +165,7 @@ class _LightFlaschNailCardPhone extends StatelessWidget {
               child: GestureDetector(
                 onTap: () => calqueController.toggleCalque(),
                 child: Image.asset(
-                  "assets/flasch_nail/DarkVectorLarge.png",
+                  "assets/flasch_nail/DarkVector.png",
                   height: 35.h,
                   width: 150.w,
                   fit: BoxFit.contain,

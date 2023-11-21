@@ -259,30 +259,30 @@ class _NailCardState extends State<NailCard> {
                           !showMatte
                               ? Image.asset(
                                   "assets/nails/matte/RectangleMatteVert.png",
-                                  width: isTablet ? 200 : 100,
-                                  height: isTablet ? 100 : 80,
+                                  width: isTablet ? 180 : 100,
+                                  height: isTablet ? 100 : 70,
                                   fit: BoxFit.fill,
                                 )
                               : Image.asset(
                                   "assets/nails/matte/RectangleMatteBlanc.png",
-                                  width: isTablet ? 200 : 100,
-                                  height: isTablet ? 100 : 80,
+                                  width: isTablet ? 180 : 100,
+                                  height: isTablet ? 100 : 70,
                                   fit: BoxFit.fill,
                                 ),
-                          Positioned.fill(
-                            child: Align(
-                              child: Text(
-                                "MATTE",
-                                style: TextStyle(
-                                  color: showMatte
-                                      ? const Color.fromRGBO(47, 90, 92, 1)
-                                      : Colors.white,
-                                  fontSize: isTablet ? 30.sp : 70.sp,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                          ),
+                          // Positioned.fill(
+                          //   child: Align(
+                          //     child: Text(
+                          //       "MATTE",
+                          //       style: TextStyle(
+                          //         color: showMatte
+                          //             ? const Color.fromRGBO(47, 90, 92, 1)
+                          //             : Colors.white,
+                          //         fontSize: isTablet ? 30.sp : 70.sp,
+                          //         fontWeight: FontWeight.w700,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

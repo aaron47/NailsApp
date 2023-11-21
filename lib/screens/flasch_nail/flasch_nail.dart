@@ -23,52 +23,56 @@ class FlaschNailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(playVideo: true,),
       body: Stack(
         children: [
           Center(
             child: Column(
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  child: const Center(
-                    child: Text(
-                      "FLASCH NAIL",
-                      style: TextStyle(
-                        fontFamily: "Gotham",
-                        fontWeight: FontWeight.w700,
-                        color: Color.fromRGBO(35, 40, 55, 1),
-                        fontSize: 32,
-                      ),
-                    ),
-                  ),
-                ),
                 Expanded(
                   flex: 1,
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 10),
                     alignment: Alignment.bottomCenter,
                     width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 4.5,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    child: Column(
                       children: [
-                        for (var nail in flaschNailImages)
-                          GestureDetector(
-                            onTap: () {
-                              Get.to(
-                                FlaschNailDetails(
-                                  flaschNail: nail,
-                                  nails: flaschNailImages,
-                                ),
-                              );
-                            },
-                            child: Image.asset(
-                              nail.path,
-                              // width: MediaQuery.of(context).size.width / 10,
-                              width: 200.w,
-                              height: 300.h,
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.1,
+                          child:  Center(
+                            child: Text(
+                              "day light".toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: "Bodoni SvtyTwo ITC TT",
+                                fontWeight: FontWeight.normal,
+                                color: Color.fromRGBO(35, 40, 55, 1),
+                                fontSize: 32,
+                              ),
                             ),
                           ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            for (var nail in flaschNailImages)
+                              GestureDetector(
+                                onTap: () {
+                                  Get.to(
+                                    FlaschNailDetails(
+                                      flaschNail: nail,
+                                      nails: flaschNailImages,
+                                    ),
+                                  );
+                                },
+                                child: Image.asset(
+                                  nail.path,
+                                  // width: MediaQuery.of(context).size.width / 10,
+                                  width: 200.w,
+                                  height: 300.h,
+                                ),
+                              ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -88,50 +92,69 @@ class FlaschNailScreen extends StatelessWidget {
                         width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 4.5,
                         height: MediaQuery.of(context).size.height,
                         child: SingleChildScrollView(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: Column(
                             children: [
-                              for (var nail in flaschNailImages)
-                                Column(
-                                  children: [
-                                    const SizedBox(
-                                      height: 15,
+                              SizedBox(
+                                height: MediaQuery.of(context).size.height * 0.1,
+                                child:  Center(
+                                  child: Text(
+                                    "night light".toUpperCase(),
+                                    style: TextStyle(
+                                      
+                                      fontFamily: "Bodoni SvtyTwo ITC TT",
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.white,
+                                      fontSize: 32,
                                     ),
-                                    Text(
-                                      nail.id,
-                                      style: const TextStyle(
-                                        fontSize: 14,
-                                        color: Color.fromRGBO(137, 137, 137, 1),
-                                        fontFamily: "Gotham",
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {
-                                        Get.to(
-                                          FlaschNailDetails(
-                                            flaschNail: nail,
-                                            nails: flaschNailImages,
-                                          ),
-                                        );
-                                      },
-                                      child: Stack(
-                                        children: [
-                                          Image.asset(
-                                            nail.path,
-                                            width: 200.w,
-                                            height: 300.h,
-                                          ),
-                                          Image.asset(
-                                            "assets/flasch_nail/Calque.png",
-                                            width: 200.w,
-                                            height: 300.h,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  for (var nail in flaschNailImages)
+                                    Column(
+                                      children: [
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text(
+                                          nail.id,
+                                          style: const TextStyle(
+                                            fontSize: 14,
+                                            color: Color.fromRGBO(137, 137, 137, 1),
+                                            fontFamily: "Gotham",
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.to(
+                                              FlaschNailDetails(
+                                                flaschNail: nail,
+                                                nails: flaschNailImages,
+                                              ),
+                                            );
+                                          },
+                                          child: Stack(
+                                            children: [
+                                              Image.asset(
+                                                nail.path,
+                                                width: 200.w,
+                                                height: 300.h,
+                                              ),
+                                              Image.asset(
+                                                "assets/flasch_nail/Calque.png",
+                                                width: 200.w,
+                                                height: 300.h,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -139,13 +162,14 @@ class FlaschNailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(height: 50,)
               ],
             ),
           ),
           const CustomBottomBar(
             categoryName: 'FLASCH NAIL',
             heroTag: 'FlaschNail',
-            imagePath: "assets/categories/FlaschNailLarge.png",
+            imagePath: "assets/categories/FlaschNail.png",
           ),
         ],
       ),

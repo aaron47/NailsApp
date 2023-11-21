@@ -104,8 +104,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Container(
                     width: 1511.w,
-                    decoration: const BoxDecoration(
-                        color: Color.fromRGBO(240, 240, 240, 1)),
+                    decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -126,8 +125,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.only(bottom: 10),
                           alignment: Alignment.bottomCenter,
-                          width: MediaQuery.of(context).size.width -
-                              MediaQuery.of(context).size.width / 3.5,
+                          width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 3.5,
                           child: Wrap(
                             direction: Axis.horizontal,
                             alignment: WrapAlignment.center,
@@ -135,9 +133,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                               for (var nail in flaschNailImages)
                                 GestureDetector(
                                   onTap: () {
-                                    Get.to(FlaschNailDetails(
-                                        flaschNail: nail,
-                                        nails: flaschNailImages));
+                                    Get.to(FlaschNailDetails(flaschNail: nail, nails: flaschNailImages));
                                   },
                                   child: !nail.withCalque
                                       ? Column(
@@ -158,8 +154,7 @@ class NewFlaschNailScreen extends StatelessWidget {
                                                   fontSize: 32.sp,
                                                   fontFamily: "Gotham",
                                                   fontWeight: FontWeight.w700,
-                                                  color: const Color.fromRGBO(
-                                                      35, 40, 55, 1),
+                                                  color: const Color.fromRGBO(35, 40, 55, 1),
                                                 ),
                                               ),
                                             ),
@@ -196,7 +191,7 @@ class NewFlaschNailScreen extends StatelessWidget {
           const CustomBottomBar(
             categoryName: 'FLASCH NAIL',
             heroTag: 'FlaschNail',
-            imagePath: "assets/categories/FlaschNailLarge.png",
+            imagePath: "assets/categories/FlaschNail.png",
           ),
         ],
       ),

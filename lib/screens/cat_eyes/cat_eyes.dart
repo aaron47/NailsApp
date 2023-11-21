@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:essential_beauty/screens/rubber_base_gel/rubber_base_gel.dart';
 import 'package:essential_beauty/widgets/custom_bottom_bar.dart';
 import 'package:essential_beauty/widgets/nails/custom_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +26,7 @@ class CatEyesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(playVideo: true,),
       body: isTablet ? CatEyesTablet(catEyeNails: catEyeNails) : CatEyesPhone(catEyeNails: catEyeNails),
     );
   }
@@ -46,31 +45,22 @@ class CatEyesTablet extends StatelessWidget {
     return Stack(
       children: [
         Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
-            const ButtonPlayVideo(),
+            SizedBox(height: 40,) , 
+            // const ButtonPlayVideo(play),
             Center(
               child: Container(
-                width: 1511.w,
-                decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
+                // width: 1511.w,
+                // decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
                 padding: const EdgeInsets.all(50),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      child: const Center(
-                        child: Text(
-                          "CAT EYES",
-                          style: TextStyle(
-                            fontFamily: "Gotham",
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromRGBO(35, 40, 55, 1),
-                            fontSize: 32,
-                          ),
-                        ),
-                      ),
-                    ),
+                    
                     Container(
                       margin: const EdgeInsets.only(bottom: 10),
                       alignment: Alignment.bottomCenter,
@@ -122,7 +112,7 @@ class CatEyesTablet extends StatelessWidget {
         const CustomBottomBar(
           categoryName: 'CAT EYES',
           heroTag: 'CatEyes',
-          imagePath: "assets/categories/CatEyesLarge.png",
+          imagePath: "assets/categories/CatEyes.png",
         ),
       ],
     );
@@ -142,28 +132,21 @@ class CatEyesPhone extends StatelessWidget {
     return Stack(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Container(
-                padding: const EdgeInsets.all(50),
+                // padding: const EdgeInsets.all(30),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
-                        "CAT EYES",
-                        style: TextStyle(
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(35, 40, 55, 1),
-                          fontSize: 20,
-                        ),
-                      ),
+                      
                       Container(
                         margin: const EdgeInsets.only(bottom: 10),
                         alignment: Alignment.bottomCenter,
-                        width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 3.5,
+                        width: MediaQuery.of(context).size.width - MediaQuery.of(context).size.width / 4.5,
                         child: Wrap(
                           direction: Axis.horizontal,
                           alignment: WrapAlignment.center,
@@ -217,7 +200,7 @@ class CatEyesPhone extends StatelessWidget {
         const CustomBottomBar(
           categoryName: 'CAT EYES',
           heroTag: 'CatEyes',
-          imagePath: "assets/categories/CatEyesLarge.png",
+          imagePath: "assets/categories/CatEyes.png",
         ),
       ],
     );

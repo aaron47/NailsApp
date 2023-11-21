@@ -1,8 +1,8 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:essential_beauty/screens/home.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +14,10 @@ void main() async {
   //   enabled: !kReleaseMode,
   //   builder: (context) => const MyApp(), // Wrap your app
   // ));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+    statusBarColor: Colors.transparent, // Transparent status bar
+    statusBarIconBrightness: Brightness.light, // White icons
+  ));
   runApp(const MyApp());
 }
 
@@ -52,7 +56,7 @@ class Home extends StatelessWidget {
     ScreenUtil.init(context, designSize: const Size(1920, 1080));
     return AnimatedSplashScreen(
       splashIconSize: MediaQuery.of(context).size.height,
-      splash: const Splash(),
+      splash: Splash(),
       nextScreen: const HomeScreen(),
       splashTransition: SplashTransition.fadeTransition,
       duration: 1500,

@@ -11,8 +11,7 @@ import '../../widgets/nails/custom_app_bar.dart';
 import '../../widgets/nails/nail_details.dart';
 
 class CatEyesDetails extends StatelessWidget {
-  final isTablet = TabletDetector.isTablet(
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
   CatEyesDetails({super.key, required this.nail, required this.nails});
 
   final CatEyeNail nail;
@@ -39,9 +38,7 @@ class CatEyesDetails extends StatelessWidget {
                     return SizedBox(
                       height: MediaQuery.of(context).size.height,
                       //decoration: const BoxDecoration(color: Colors.white),
-                      child: isTablet
-                          ? BaseCatEyeNail(nail: n)
-                          : BaseCatEyeNailPhone(nail: n),
+                      child: isTablet ? BaseCatEyeNail(nail: n) : BaseCatEyeNailPhone(nail: n),
                     );
                   },
                 );
@@ -49,7 +46,7 @@ class CatEyesDetails extends StatelessWidget {
             ),
           ),
           const CustomBottomBar(
-            imagePath: "assets/categories/CatEyesLarge.png",
+            imagePath: "assets/categories/CatEyes.png",
             heroTag: "CatEyes",
             categoryName: "CAT EYES",
           ),
@@ -78,16 +75,15 @@ class BaseCatEyeNail extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          InkWell(
-            onTap: () {
-              Get.back();
-            },
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Image.asset("assets/CloseButton.png",
-                  width: 66.21.w, height: 66.h),
-            ),
-          ),
+          // InkWell(
+          //   onTap: () {
+          //     Get.back();
+          //   },
+          //   child: Align(
+          //     alignment: Alignment.topRight,
+          //     child: Image.asset("assets/CloseButton.png", width: 66.21.w, height: 66.h),
+          //   ),
+          // ),
           Center(
             // heightFactor: 1,
             child: Row(
@@ -100,18 +96,19 @@ class BaseCatEyeNail extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "CAT EYES",
-                      style: TextStyle(
-                        fontSize: 32.sp,
-                        fontFamily: "Gotham",
-                        fontWeight: FontWeight.w700,
-                        color: const Color.fromRGBO(35, 40, 55, 1),
-                      ),
-                    ),
-                    const PlayButtonLarge(
-                      bottomMargin: 0,
-                    ),
+                    // Text(
+                    //   "CAT EYES",
+                    //   style: TextStyle(
+                    //     fontSize: 32.sp,
+                    //     fontFamily: "Gotham",
+                    //     fontWeight: FontWeight.w700,
+                    //     color: const Color.fromRGBO(35, 40, 55, 1),
+                    //   ),
+                    // ),
+                    // const PlayButtonLarge(
+                    //   bottomMargin: 0,
+                    // ),
+                    SizedBox(height: 200.w,),
                     SizedBox(
                       width: 350,
                       child: Padding(
@@ -213,9 +210,9 @@ class BaseCatEyeNailPhone extends StatelessWidget {
                     _CatEyeNailCardPhone(
                       catEyeNail: nail,
                     ),
-                    const PlayButtonLargePhone(
-                      bottomMargin: 130,
-                    ),
+                    // const PlayButtonLargePhone(
+                    //   bottomMargin: 130,
+                    // ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -226,10 +223,8 @@ class BaseCatEyeNailPhone extends StatelessWidget {
                       decoration: const BoxDecoration(
                         border: Border(
                           left: BorderSide(
-                            color: Colors
-                                .grey, // Replace with your desired border color
-                            width:
-                                1.0, // Replace with your desired border width
+                            color: Colors.grey, // Replace with your desired border color
+                            width: 1.0, // Replace with your desired border width
                           ),
                         ),
                       ),

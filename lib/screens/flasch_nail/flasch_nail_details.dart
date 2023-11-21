@@ -11,8 +11,7 @@ import '../../widgets/nails/custom_app_bar.dart';
 import '../../widgets/nails/nail_details.dart';
 
 class FlaschNailDetails extends StatelessWidget {
-  final isTablet = TabletDetector.isTablet(
-      MediaQueryData.fromWindow(WidgetsBinding.instance.window));
+  final isTablet = TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window));
 
   FlaschNailDetails({super.key, required this.flaschNail, required this.nails});
 
@@ -39,9 +38,7 @@ class FlaschNailDetails extends StatelessWidget {
                   builder: (BuildContext context) {
                     return Container(
                       decoration: const BoxDecoration(color: Colors.white),
-                      child: isTablet
-                          ? BaseFlaschNail(flaschNail: n)
-                          : BaseFlaschNailPhone(flaschNail: n),
+                      child: isTablet ? BaseFlaschNail(flaschNail: n) : BaseFlaschNailPhone(flaschNail: n),
                     );
                   },
                 );
@@ -51,7 +48,7 @@ class FlaschNailDetails extends StatelessWidget {
           const CustomBottomBar(
             categoryName: 'FLASCH NAIL',
             heroTag: 'FlaschNail',
-            imagePath: "assets/categories/FlaschNailLarge.png",
+            imagePath: "assets/categories/FlaschNail.png",
           ),
         ],
       ),
@@ -72,23 +69,13 @@ class BaseFlaschNail extends StatelessWidget {
     return Center(
       child: Container(
         width: 1511.w,
-        decoration:
-            const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
+        decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
         padding: const EdgeInsets.all(15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: () {
-                Get.back();
-              },
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Image.asset("assets/CloseButton.png",
-                    width: 66.21.w, height: 66.h),
-              ),
-            ),
+            
             Center(
               heightFactor: 1,
               child: Row(
@@ -101,18 +88,19 @@ class BaseFlaschNail extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "FLASCH NAIL",
-                        style: TextStyle(
-                          fontSize: 32.sp,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(35, 40, 55, 1),
-                        ),
-                      ),
-                      const PlayButtonLarge(
-                        bottomMargin: 0,
-                      ),
+                      // Text(
+                      //   "FLASCH NAIL",
+                      //   style: TextStyle(
+                      //     fontSize: 32.sp,
+                      //     fontFamily: "Gotham",
+                      //     fontWeight: FontWeight.w700,
+                      //     color: const Color.fromRGBO(35, 40, 55, 1),
+                      //   ),
+                      // ),
+                      // const PlayButtonLarge(
+                      //   bottomMargin: 0,
+                      // ),
+                      SizedBox(height: 200.w,),
                       SizedBox(
                         width: 300,
                         child: Padding(
@@ -157,12 +145,9 @@ class BaseFlaschNail extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: 300
-                            .w, // Adjust the width to match your bottle image size
+                        width: 300.w, // Adjust the width to match your bottle image size
                         // height: 400, // Adjust the height to match your bottle image size
-                        child: Image.asset("assets/bottle/flashnails.png",
-                            width:
-                                275.w), // Replace with your bottle image source
+                        child: Image.asset("assets/bottle/flashnails.png", width: 275.w), // Replace with your bottle image source
                       ),
                       const BottleShadow(),
                     ],
@@ -215,9 +200,9 @@ class BaseFlaschNailPhone extends StatelessWidget {
                     FlaschNailCard(
                       flaschNail: flaschNail,
                     ),
-                    const PlayButtonLargePhone(
-                      bottomMargin: 130,
-                    ),
+                    // const PlayButtonLargePhone(
+                    //   bottomMargin: 130,
+                    // ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -228,10 +213,8 @@ class BaseFlaschNailPhone extends StatelessWidget {
                       decoration: const BoxDecoration(
                         border: Border(
                           left: BorderSide(
-                            color: Colors
-                                .grey, // Replace with your desired border color
-                            width:
-                                1.0, // Replace with your desired border width
+                            color: Colors.grey, // Replace with your desired border color
+                            width: 1.0, // Replace with your desired border width
                           ),
                         ),
                       ),

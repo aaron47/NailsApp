@@ -15,8 +15,9 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window)) ? 300.w : 600.w,
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+      // height: TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window)) ? 300.h : 600.w,
+      width: TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window)) ? 500.w : 600.w,
+      // margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Column(
         children: [
           CustomImageRippleEffect(
@@ -27,24 +28,26 @@ class Category extends StatelessWidget {
                   BuildContext fromHeroContext, BuildContext toHeroContext) {
                 return Image.asset(
                   imgPath,
-                  width: 250.w,
+                 
+                  width: 800.w,
                 );
               },
               child: Image.asset(
                 imgPath,
                 fit: BoxFit.cover,
+                  width: 1200.w,
               ),
             ),
           ),
-          const SizedBox(height: 15),
-          Text(
-            categoryName,
-            style: TextStyle(
-              fontSize: TabletDetector.isTablet(MediaQueryData.fromWindow(WidgetsBinding.instance.window)) ? 32.sp : 60.sp,
-              fontFamily: "IBMPlexMono",
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          // const SizedBox(height: 15),
+          // Text(
+          //   categoryName,
+          //   style: TextStyle(
+          //     fontSize: TabletDetector.isTablet(MediaQueryData.fromView(WidgetsBinding.instance.window)) ? 32.sp : 60.sp,
+          //     fontFamily: "IBMPlexMono",
+          //     fontWeight: FontWeight.bold,
+          //   ),
+          // ),
         ],
       ),
     );

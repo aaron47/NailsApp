@@ -1,7 +1,6 @@
 {
 	"version": "0.2.0",
 	"configurations": [
-		
 		{
 			"name": "Flutter",
 			"type": "dart",
@@ -13,7 +12,6 @@
 			"request": "launch",
 			"type": "dart",
 			"deviceId": "emulator-5554",
-	
 			"program": "lib/main.dart"
 		},
 		{
@@ -22,7 +20,7 @@
 			"type": "dart",
 			"deviceId": "e472eba60730b811ae65e01cc619748f1a96c693",
 			"program": "lib/main.dart"
-		},	
+		},
 		{
 			"name": "SM G935F (mobile)",
 			"request": "launch",
@@ -57,11 +55,19 @@
 			"type": "dart",
 			"deviceId": "A259B5BB-3FD2-46EA-A031-D42CAAB60011",
 			"program": "lib/main.dart"
-		},		{
+		},
+		{
 			"name": "iPad Pro (12.9-inch) (5th generation) ",
 			"request": "launch",
 			"type": "dart",
-			"deviceId": "D171F506-29A5-49EE-BF88-BD376D9DE5FA",
+			"deviceId": "F57DF8FE-A0AA-4FC0-9ACC-E9C2BE06FEDF",
+			"program": "lib/main.dart"
+		},
+		{
+			"name": "iPhone 14 Pro (mobile) ",
+			"request": "launch",
+			"type": "dart",
+			"deviceId": "FF14087E-DA90-43E6-9925-547B5E2E5FF7",
 			"program": "lib/main.dart"
 		},
 		{

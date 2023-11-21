@@ -26,7 +26,7 @@ class BuilderGelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(playVideo: true,),
         body: isTablet
             ? BuilderGelTablet(isTablet: isTablet, builderGelListRow: builderGelListRow)
             : BuilderGelPhone(isTablet: isTablet, builderGelListRow: builderGelListRow));
@@ -48,29 +48,18 @@ class BuilderGelTablet extends StatelessWidget {
     return Stack(
       children: [
         Row(
+           crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const ButtonPlayVideo(),
+            // const ButtonPlayVideo(),
             Container(
-              width: 1511.w,
-              decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
+              // width: 1511.w,
+              // decoration: const BoxDecoration(color: Color.fromRGBO(240, 240, 240, 1)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.all(40),
-                      child: Text(
-                        "Builder gel",
-                        style: TextStyle(
-                          fontSize: isTablet ? 32 : 22,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(11, 43, 45, 1),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   Expanded(
                     child: Container(
                       child: Column(
@@ -96,7 +85,7 @@ class BuilderGelTablet extends StatelessWidget {
         const CustomBottomBar(
           categoryName: 'BUILDER GEL',
           heroTag: 'BuilderGel',
-          imagePath: "assets/categories/BuilderGelLarge.png",
+          imagePath: "assets/categories/BuilderGel.png",
         ),
       ],
     );
@@ -128,20 +117,7 @@ class BuilderGelPhone extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Center(
-                    child: Padding(
-                      padding: isTablet ? const EdgeInsets.all(20) : const EdgeInsets.all(20),
-                      child: Text(
-                        "Builder gel",
-                        style: TextStyle(
-                          fontSize: isTablet ? 32 : 22,
-                          fontFamily: "Gotham",
-                          fontWeight: FontWeight.w700,
-                          color: const Color.fromRGBO(11, 43, 45, 1),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   Expanded(
                     child: Container(
                       child: Column(
@@ -167,7 +143,7 @@ class BuilderGelPhone extends StatelessWidget {
         const CustomBottomBar(
           categoryName: 'BUILDER GEL',
           heroTag: 'BuilderGel',
-          imagePath: "assets/categories/BuilderGelLarge.png",
+          imagePath: "assets/categories/BuilderGel.png",
         ),
       ],
     );

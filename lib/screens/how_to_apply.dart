@@ -56,15 +56,12 @@ class _HowToApplyScreenState extends State<HowToApplyScreen> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-            gradient: RadialGradient(
-          center: Alignment(0.0393, 1.0),
-          radius: 4.1932,
-          colors: [
-            Color.fromRGBO(20, 77, 81, 0.8),
-            Color.fromRGBO(0, 0, 0, 0.8),
-          ],
-        )),
+       decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/BlurryVideoBg.png"), // Replace with your image asset path
+            fit: BoxFit.cover,
+          ),
+        ),
         child: Row(
           children: [
             if (isTablet) ...[
@@ -303,7 +300,7 @@ class LeftSide extends StatelessWidget {
                   bottomRight: Radius.circular(75),
                 ),
                 image: DecorationImage(
-                  image: AssetImage("assets/AppBarBackground.png"),
+                  image: AssetImage("assets/backgroundAppBarV2.png"),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -431,7 +428,7 @@ class LeftSidePhone extends StatelessWidget {
                   bottomRight: Radius.circular(75),
                 ),
                 image: DecorationImage(
-                  image: AssetImage("assets/AppBarBackground.png"),
+                  image: AssetImage("assets/backgroundAppBarV2.png"),
                   fit: BoxFit.cover,
                 ),
               ),
